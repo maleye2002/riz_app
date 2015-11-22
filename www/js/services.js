@@ -4,72 +4,90 @@ angular.module('app.services', [])
 
   }])
 
+    .factory('$localstorage', ['$window', function($window) {
+      return {
+        set: function(key, value) {
+          $window.localStorage[key] = value;
+        },
+        get: function(key, defaultValue) {
+          return $window.localStorage[key] || defaultValue;
+        },
+        setObject: function(key, value) {
+          $window.localStorage[key] = JSON.stringify(value);
+        },
+        getObject: function(key) {
+          return JSON.parse($window.localStorage[key] || '{}');
+        }
+      }
+    }])
+
   .service('BlankService', [function(){
 
   }])
 
-    .service('store', ['$window', function ($window) {
-      var storeName = 'rizaa';
-      var prevision = 'previsionaa';
+    .service('store', ['$localstorage', function ($localstorage) {
+      var storeName = 'riz';
+      var prevision = 'prevision', recolte = 'recolte', usine='usine';
+      var credentials = 'credentials';
 
-      function cleanPlace(prevision) {
-        if (!$window.localStorage[storeName]) { //init
-          $window.localStorage[storeName] = {}
-        }
-
+      function cleanStore(prevision) {
         //add to store
-        if (!$window.localStorage[storeName][prevision]) {
-          $window.localStorage[storeName][prevision] = [];
+        var store = $localstorage.getObject(storeName);
+        if (!store[prevision] || ! store[prevision] instanceof Array ) {
+          store[prevision] = [];
+          $localstorage.setObject(storeName, store)
         }
       }
 
       return {
-        productionKey : 'toto',
+        productionKey: 'toto',
+        getStore: function () {
+          return $localstorage.getObject(storeName);
+        },
+        updateStore: function (newStore) {
+          $localstorage.setObject(storeName, newStore)
+        },
 
-        addPrevision: function (newItem){
-          cleanPlace(prevision);
+        getCredential: function(){
+          var store = this.getStore();
+          return store[credentials] || {};
+        },
+        setCredential: function(userCredentials){
+          var store = this.getStore();
+          store[credentials] = userCredentials;
+          this.updateStore(store);
+        },
+
+        addPrevision: function (newItem) {
+          this.addNewItem(newItem, prevision);
+        },
+        addRecolte: function (newItem) {
+          this.addNewItem(newItem, recolte);
+        },
+        addUsine: function (newItem) {
+          this.addNewItem(newItem, usine);
+        },
+        addNewItem: function (newItem, sectionName) {
+          cleanStore(sectionName);
           //Add new item
-          if(newItem){
-            var store = this.get(storeName);
-            store[prevision].append(newItem);
-            this.set(storeName, store);
+          if (newItem) {
+            var store = this.getStore();
+            store[sectionName].append(newItem);
+            this.updateStore(store);
           }
         },
-        getPrevisions: function (){
-          cleanPlace(prevision);
-          //Add new item
-          var store = this.get(storeName);
-          return store[prevision];
 
-        },
-        getPrevision: function (key){
-          cleanPlace(prevision);
-          //Add new item
-          if(key){
-            $window.localStorage[storeName][prevision].filter(function(){
-            });
-          }
-        },
-        get: function (key) {
-          if ($window.localStorage [key]) {
-            var cart = angular.fromJson($window.localStorage [key]);
-            return JSON.parse(cart);
-          }
-          return false;
-          //$windows.localStorage
-
-
+        getItems: function(sectionName){
+          var store = this.getStore();
+          return store[sectionName];
         },
 
-
-        set: function (key, val) {
-
-          if (val === undefined) {
-            $window.localStorage .removeItem(key);
-          } else {
-            $window.localStorage [key] = angular.toJson(val);
+        getItem: function(id, sectionName){
+          var items = this.getItems(sectionName);
+          if(items){
+            //TODO SEARCH ITEM HERE
+            return {};
           }
-          return $window.localStorage [key];
         }
       }
     }]
