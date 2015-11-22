@@ -1,34 +1,28 @@
-<ion-view style="" title="previsions">
-    <ion-content class="has-header" padding="'true'">
-        <h2 style="">Prévisions de récolte</h2>
-        <form style="" class="list"></form>
-        <div style="" class="list card">
-            <div class="item item-divider">Identification duu Producteur</div>
+ <div style="" class="list card">
+            <div class="item item-divider">Identification du Producteur</div>
             <div class="item item-body">
                 <form style="" class="list">
                     <label style="" class="item item-input">
                         <span class="input-label">Nom</span>
-                        <input placeholder="" type="text" ng-model="prevision.user.name">
+                        <input placeholder="" type="text" ng-model="prevision.user.firstName">
                     </label>
                     <label style="" class="item item-input">
                         <span class="input-label">Prenom</span>
-                        <input placeholder="" type="text">
+                        <input placeholder="" type="text" ng-model="prevision.user.lastName">
                     </label>
                     <label style="" class="item item-input">
                         <span class="input-label">Lieu</span>
-                        <input placeholder="" type="text">
+                        <input placeholder="" type="text" ng-model="prevision.user.location">
                     </label>
                     <label style="" class="item item-input">
                         <span class="input-label">Contact</span>
-                        <input placeholder="" type="text">
+                        <input placeholder="" type="text" ng-model="prevision.user.contact">
                     </label>
                     <label style="" class="item item-input">
                         <span class="input-label">Structure</span>
-                        <input placeholder="" type="text">
+                        <input placeholder="" type="text" ng-model="prevision.user.structure">
                     </label>
-                    <a style="" class="button button-stable button-block " href="#/page14" menu-close="">Suivant</a>
+                    <a style="" class="button button-stable button-block " ui-sref="previsions.page2" menu-close="">Suivant</a>
                 </form>
             </div>
         </div>
-    </ion-content>
-</ion-view>

@@ -42,8 +42,17 @@ angular.module('app.routes', [])
         
     .state('previsions', {
       url: '/page11',
-      templateUrl: 'templates/previsions.html',
+      abstract:true,
+      templateUrl: 'templates/previsionsMaster.html',
       controller: 'previsionsCtrl'
+    })
+    .state('previsions.page1', {
+      url: '',
+      templateUrl: 'templates/previsions.html'
+    })
+    .state('previsions.page2', {
+      url: '/step_2',
+      templateUrl: 'templates/previsionsSuite.html'
     })
         
       

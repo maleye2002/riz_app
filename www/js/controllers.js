@@ -1,10 +1,11 @@
 angular.module('app.controllers', [])
 
-.controller('loginCtrl', function($scope) {
+.controller('loginCtrl', function($scope, $localstorage, $state) {
     $scope.user = {};
-    $scope.test = function ()
+    $scope.connexion = function ()
     {
-      alert ($scope.user.userName);
+        $localstorage.setObject('Connexion', $scope.user);
+        $state.go('home');
     }
   })
 
@@ -17,7 +18,9 @@ angular.module('app.controllers', [])
 })
 
 .controller('homeCtrl', function($scope, store) {
-  $scope.store = store.getPrevisions();
+ // $scope.store = store.getPrevisions();
+        var test =    store.getStore();
+        console.log(test);
 })
 
 .controller('previsionsCtrl', function($scope, store) {
@@ -26,7 +29,7 @@ angular.module('app.controllers', [])
 
     function addPrevision(){
       store.addPrevision($scope.prevision);
-      //$state.go('');
+      $state.go('home');
     }
 
 })
