@@ -1,6 +1,6 @@
 angular.module('app.controllers', [])
 
-    .controller('loginCtrl', function($scope, store, $state) {
+    .controller('loginCtrl', function($scope, store, $state,$http) {
         $scope.user={};
         console.log(store.getCredential());
         $scope.connexion = function ()
@@ -16,12 +16,17 @@ angular.module('app.controllers', [])
 
             console.log(store.getCredential());
         }
-        $scope.testConnection = function()
-        {
-            if(!store.getCredential()){
-                $state.go('signup');
-            }
-            else{ alert("Compte deja cree");}
+        $scope.testConnection = function() {
+            $http.get('http://www.google.com')
+                .then(function(resp) {
+                    //$scope.conditions = resp.data.conditions;
+                   console.log(resp);
+                }, function(err) {
+                    console.error('ERR', err);
+                   alert(err);
+                    // err.status will contain the status code
+                });
+
         }
     })
 
@@ -45,7 +50,7 @@ angular.module('app.controllers', [])
     .controller('homeCtrl', function($scope,$http, store ) {
         $scope.message = null;
         var data = store.getStore();
-        console.log(data);
+        console.log(JSON.stringify(data));
         $scope.message = {};
         $scope.upload = function (){
             var data = store.getStore();
