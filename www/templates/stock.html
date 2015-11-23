@@ -1,3 +1,36 @@
-<ion-view style="" title="stock">
-    <ion-content class="has-header" padding="'true'"></ion-content>
-</ion-view>
+<div style="" class="list card">
+    <div class="item item-divider">Identification du Producteur</div>
+    <div class="item item-body">
+        <form style="" class="list">
+            <label style="" class="item item-input">
+                <span class="input-label">Nom</span>
+                <input placeholder="" type="text" ng-model="stock.user.firstName">
+            </label>
+            <label style="" class="item item-input">
+                <span class="input-label">Prenom</span>
+                <input placeholder="" type="text" ng-model="stock.user.lastName">
+            </label>
+            <label style="" class="item item-input">
+                <span class="input-label">Pays</span>
+                <input placeholder="" type="text" ng-model="stock.user.pays">
+            </label>
+            <label style="" class="item item-input">
+                <span class="input-label">Ville</span>
+                <input placeholder="" type="text" ng-model="stock.user.ville">
+            </label>
+            <label style="" class="item item-input">
+                <span class="input-label">Zone/Village</span>
+                <input placeholder="" type="text" ng-model="stock.user.zone">
+            </label>
+            <label style="" class="item item-input">
+                <span class="input-label">Contact</span>
+                <input placeholder="" type="text" ng-model="stock.user.contact">
+            </label>
+            <label style="" class="item item-input">
+                <span class="input-label">Structure</span>
+                <input placeholder="" type="text" ng-model="stock.user.structure">
+            </label>
+            <a style="" class="button button-stable button-block " ui-sref="stock.page2" menu-close="">Suivant</a>
+        </form>
+    </div>
+</div>

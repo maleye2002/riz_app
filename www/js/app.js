@@ -19,4 +19,10 @@ angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.services',
       StatusBar.styleDefault();
     }
   });
-})
+});
+  //  .config(['$httpProvider', function($httpProvider) {
+  //  $httpProvider.defaults.useXDomain = true;
+  //  $httpProvider.defaults.headers.common = 'Content-Type: application/json';
+  //  delete $httpProvider.defaults.headers.common['X-Requested-With'];
+  //}
+  //]);

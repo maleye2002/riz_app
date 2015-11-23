@@ -27,7 +27,8 @@ angular.module('app.services', [])
 
     .service('store', ['$localstorage', function ($localstorage) {
       var storeName = 'riz';
-      var prevision = 'prevision', recolte = 'recolte', usine='usine';
+      var storeCnx = 'rizCredential';
+      var prevision = 'prevision', stock = 'stock', produit='produit';
       var credentials = 'credentials';
 
       function cleanStore(prevision) {
@@ -39,40 +40,52 @@ angular.module('app.services', [])
         }
       }
 
+
       return {
         productionKey: 'toto',
         getStore: function () {
           return $localstorage.getObject(storeName);
         },
+        TestCnx: function () {
+
+
+          //return $localstorage.getObject(storeName);
+        },
+        getStoreCredential:function()
+        {
+          return $localstorage.getObject(storeCnx);
+        },
         updateStore: function (newStore) {
           $localstorage.setObject(storeName, newStore)
         },
+        updateStoreCredential: function (newStore) {
+          $localstorage.setObject(storeCnx, newStore)
+        },
 
         getCredential: function(){
-          var store = this.getStore();
-          return store[credentials] || {};
+          var storeCredential = this.getStoreCredential();
+          return storeCredential || {};
         },
         setCredential: function(userCredentials){
-          var store = this.getStore();
-          store[credentials] = userCredentials;
-          this.updateStore(store);
+          //var storeCredential = this.getStoreCredential();
+          this.updateStoreCredential(userCredentials);
         },
 
         addPrevision: function (newItem) {
           this.addNewItem(newItem, prevision);
         },
-        addRecolte: function (newItem) {
-          this.addNewItem(newItem, recolte);
+        addStock: function (newItem) {
+          this.addNewItem(newItem, stock);
         },
-        addUsine: function (newItem) {
-          this.addNewItem(newItem, usine);
+        addProduit: function (newItem) {
+          this.addNewItem(newItem, produit);
         },
         addNewItem: function (newItem, sectionName) {
           cleanStore(sectionName);
           //Add new item
           if (newItem) {
             var store = this.getStore();
-            store[sectionName].append(newItem);
+            store[sectionName].push(newItem);
             this.updateStore(store);
           }
         },

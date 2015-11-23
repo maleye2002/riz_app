@@ -1,3 +1,40 @@
-<ion-view style="" title="produit">
-    <ion-content class="has-header" padding="'true'"></ion-content>
-</ion-view>
+<div style="" class="list card">
+    <div class="item item-divider">Identification usinier</div>
+    <div class="item item-body">
+        <form style="" class="list">
+            <label style="" class="item item-input">
+                <span class="input-label">Nom</span>
+                <input placeholder="" type="text" ng-model="produit.user.firstName">
+            </label>
+            <label style="" class="item item-input">
+                <span class="input-label">Prenom</span>
+                <input placeholder="" type="text" ng-model="produit.user.lastName">
+            </label>
+            <label style="" class="item item-input">
+                <span class="input-label">Pays</span>
+                <input placeholder="" type="text" ng-model="produit.user.pays">
+            </label>
+            <label style="" class="item item-input">
+                <span class="input-label">Ville</span>
+                <input placeholder="" type="text" ng-model="produit.user.ville">
+            </label>
+            <label style="" class="item item-input">
+                <span class="input-label">Zone/Village</span>
+                <input placeholder="" type="text" ng-model="produit.user.zone">
+            </label>
+            <label style="" class="item item-input">
+                <span class="input-label">Contact</span>
+                <input placeholder="" type="text" ng-model="produit.user.contact">
+            </label>
+            <label style="" class="item item-input">
+                <span class="input-label">Type Usine</span>
+                <input placeholder="" type="text" ng-model="produit.user.typeUsine">
+            </label>
+            <label style="" class="item item-input">
+                <span class="input-label">Capacite</span>
+                <input placeholder="" type="number" ng-model="produit.user.capaciteUsine">
+            </label>
+            <a style="" class="button button-stable button-block " ui-sref="produit.page2" menu-close="">Suivant</a>
+        </form>
+    </div>
+</div>
