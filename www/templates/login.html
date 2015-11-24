@@ -4,20 +4,17 @@
             <ion-list style="">
                 <label style="" name="UserName" class="item item-input">
                     <span class="input-label">Username</span>
-                    <input placeholder="" type="text" ng-model="user.userName"  >
+                    <input placeholder="" type="text" ng-model="user.userName" >
                 </label>
-
                 <label style="" name="Password" class="item item-input">
                     <span class="input-label">Password</span>
                     <input placeholder="" type="password"  ng-model="user.pwd" >
                 </label>
             </ion-list>
             <div style="height: 40px;" class="spacer"></div>
-            <button  style="" class="button button-balanced button-block " ng-click="connexion()">Log in</button>
-            <button style="" class="button button-positive button-clear button-block "  ng-click="testConnection()" menu-close="">Or create an account </button>
-            <button  style="" class="button button-positive button-clear button-block "  ng-click="EditCnx()" >Edit account</button>
-
-
+            <button  style="" class="button button-balanced button-block " ng-click="connexion()" menu-close="">Log in</button>
+           <button style="" class="button button-positive button-clear button-block "  ng-click="testConnection()" menu-close="">Or create an account </button>
+            <a style="" class="button button-positive button-clear button-block "  href="#/EditCompte" menu-close="">Edit account</a>
         </form>
     </ion-content>
 </ion-view>
