@@ -60,6 +60,7 @@ angular.module('app.controllers', [])
                     //$scope.conditions = resp.data.conditions;
                     $scope.message={msg:'sddsds', nClass:'button button-small button-full button-balanced'};
                    // store.updateStore({});
+                    alert (data);
                     console.log(store.getStore(), $scope.message);
 
                 }, function(err) {
