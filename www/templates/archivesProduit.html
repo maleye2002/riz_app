@@ -1,0 +1,20 @@
+<ion-view style="" title="Archives Produits">
+    <ion-content class="has-header" padding="'true'">
+        <h1 style="">Cyber - riz</h1>
+        <div style="width: 300px; height: 54px;" class="spacer"></div>
+
+        <div class="card" ng-repeat="item in ListProduit">
+            <div class="item item-divider">
+                <div class="row">
+                    <div  class="col  ">{{ $index  }}
+                        1<br>2<br>3<br>41<br>2<br>3<br>4
+                    </div>
+                    <div class="col col-5 col-offset-90 "><button ng-click="deleteProduit()" class="button icon ion-trash-b button-assertive button-small" ></button></div>
+                </div>
+            </div>
+        </div>
+
+
+
+    </ion-content>
+</ion-view>

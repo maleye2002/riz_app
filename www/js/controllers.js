@@ -1,32 +1,54 @@
 angular.module('app.controllers', [])
-
-    .controller('loginCtrl', function($scope, store, $state,$http) {
+//, $timeou
+    .controller('loginCtrl', function($scope, store, $state,$http, $ionicPopup) {
         $scope.user={};
-        console.log(store.getCredential());
-        $scope.connexion = function ()
-        {
+        $scope.connexion = function () {
             var test = store.getCredential();
-            if(($scope.user.userName == test.UserName) &&  ($scope.user.pwd == test.NewPwd))
-            {
-                $state.go('home');
-                console.log('cool');
-            }
-            else
-            { console.log('Not cool')}
+            if(($scope.user.userName == test.UserName) &&  ($scope.user.pwd == test.NewPwd)) {
+                $ionicPopup.alert({
+                    title: 'Cyber-Riz',
+                    template: 'connexion  etablie',
+                    buttons: [{
+                        text: 'Ok',
+                        type: 'button-balanced'
 
-            console.log(store.getCredential());
+                        }]
+                });
+                $state.go('home');
+
+            }
+            else {
+                $ionicPopup.alert({
+                    title: 'Cyber-Riz',
+                    template: 'Valeurs saisies incorrectes',
+                    buttons: [{
+                        text: 'Ok',
+                        type: 'button-assertive'
+
+                    }]
+                });
+            }
+
+
         }
         $scope.testConnection = function() {
-            $http.get('http://www.google.com')
-                .then(function(resp) {
-                    //$scope.conditions = resp.data.conditions;
-                   console.log(resp);
-                }, function(err) {
-                    console.error('ERR', err);
-                   alert(err);
-                    // err.status will contain the status code
-                });
 
+            $ionicPopup.alert({
+                title: 'Cyber-Riz',
+                template: 'Valeurs saisies incorrectes',
+                buttons: [{
+                    text: 'Ok',
+                    type: 'button-assertive'
+
+                }]
+            });
+            $state.go('signup');
+
+
+
+        }
+        $scope.EditCnx = function (){
+         $state.go('EditCompte.page1');
         }
     })
 
@@ -47,7 +69,7 @@ angular.module('app.controllers', [])
 
     })
 
-    .controller('homeCtrl', function($scope,$http, store ) {
+    .controller('homeCtrl', function($scope,$http, store, $ionicPopup, $timeout ) {
         $scope.message = null;
         //http://localhost:63342/riz_app/www/api.json
         var data = store.getStore();
@@ -60,7 +82,7 @@ angular.module('app.controllers', [])
                     //$scope.conditions = resp.data.conditions;
                     $scope.message={msg:'sddsds', nClass:'button button-small button-full button-balanced'};
                    // store.updateStore({});
-                    alert (data);
+                    alert(data);
                     console.log(store.getStore(), $scope.message);
 
                 }, function(err) {
@@ -162,19 +184,27 @@ angular.module('app.controllers', [])
         }
 
     })
-    .controller('EditCtrl', function($scope,store,$state) {
+    .controller('EditCtrl', function($scope,store,$state,$ionicPopup) {
         $scope.user={};
         $scope.newUser = {};
         $scope.Suivant= function(){
             var test = store.getCredential();
-            if(($scope.user.userName == test.NewUserName) &&  ($scope.user.pwd == test.NewPwd))
+            if(($scope.user.userName == test.UserName) &&  ($scope.user.pwd == test.NewPwd))
             {
                 $state.go('EditCompte.page2');
 
             }
             else
             {
-                alert ('Valeurs incorrectes');
+                $ionicPopup.alert({
+                    title: 'Cyber-Riz',
+                    template: 'Valeurs saisies incorrectes',
+                    buttons: [{
+                        text: 'Cancel',
+                        type: 'button-assertive'
+
+                    }]
+                });
 
 
 
@@ -184,8 +214,17 @@ angular.module('app.controllers', [])
         $scope.NewCompte = function(){
 
 store.setCredential($scope.newUser);
-            alert('success');
-            console.log($scope.newUser);
+            $ionicPopup.alert({
+                title: 'Cyber-Riz',
+                template: 'Votre Profil a ete change avec succes',
+                buttons: [{
+                    text: 'Ok',
+                    type: 'button-balanced'
+
+                }]
+            });
+
+
             $state.go('login');
 
         }

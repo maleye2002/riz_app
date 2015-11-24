@@ -1,0 +1,50 @@
+<div style="" class="list card">
+    <div class="item item-divider">Informations sur le paddy</div>
+    <div class="item item-body">
+        <form style="" class="list">
+            <label style="" class="item item-input">
+                <span class="input-label">Nom fournisseur</span>
+                <input placeholder="" type="text"  ng-model="produit.paddy.firstName" >
+            </label>
+            <label style="" class="item item-input">
+                <span class="input-label">Prenom fournisseur</span>
+                <input placeholder="" type="text"  ng-model="produit.paddy.lastName" >
+            </label>
+            <label style="" class="item item-input">
+                <span class="input-label">Type</span>
+                <input placeholder="" type="text"  ng-model="produit.paddy.type">
+            </label>
+            <label style="" class="item item-input">
+                <span class="input-label">Lieu</span>
+                <input placeholder="" type="text"  ng-model="produit.paddy.lieu">
+            </label>
+            <label style="" class="item item-input">
+                <span class="input-label">Contact</span>
+                <input placeholder="" type="text"  ng-model="produit.paddy.contact">
+            </label>
+            <label style="" class="item item-input">
+                <span class="input-label">Date</span>
+                <input placeholder="" type="Date"  ng-model="produit.paddy.date">
+            </label>
+            <label style="" class="item item-input">
+                <span class="input-label">Variété&nbsp;</span>
+                <input placeholder="" type="text"  ng-model="produit.paddy.variete">
+            </label>
+            <label style="" class="item item-input">
+                <span class="input-label">Quantite(T)</span>
+                <input placeholder="" type="number"  ng-model="produit.paddy.quantite">
+            </label>
+            <label style="" class="item item-select">
+                <span class="input-label">Qualite</span>
+                <select  ng-model="produit.paddy.qualite" >
+                    <option value="v1">Q1</option>
+                    <option value="v2">Q2</option>
+                </select>
+            </label>
+
+
+            <a style="" class="button button-stable button-block"  ui-sref="produit.page3"   menu-close="">Suivant</a>
+
+        </form>
+    </div>
+</div>

@@ -1,0 +1,43 @@
+<div style="" class="list card">
+    <div class="item item-divider">Informations sur le champ</div>
+    <div class="item item-body">
+        <form style="" class="list">
+            <label style="" class="item item-input">
+                <span class="input-label">Année de campagne agricole</span>
+                <input placeholder="" type="text"  ng-model="stock.data.anneeCampagne" >
+            </label>
+            <label style="" name="dsdsds" class="item item-input">
+                <span class="input-label">Spéculation (Riz)</span>
+                <input placeholder="" type="text" ng-model="stock.data.speculation">
+            </label>
+            <label style="" class="item item-input">
+                <span class="input-label">Superficie emblavée</span>
+                <input placeholder="" type="text"  ng-model="stock.data.superficie">
+            </label>
+            <label style="" class="item item-select">
+                <span class="input-label">Catégorie Semence</span>
+                <select  ng-model="stock.data.categorie" >
+                    <option value="R1">R1</option>
+                    <option value="R2">R2</option>
+                </select>
+            </label>
+            <label style="" class="item item-input">
+                <span class="input-label">Variété&nbsp;</span>
+                <input placeholder="" type="text"  ng-model="stock.data.variete">
+            </label>
+            <label style="" class="item item-input">
+                <span class="input-label">Production prévue (T)</span>
+                <input placeholder="" type="text"  ng-model="stock.data.productionPrevue">
+            </label>
+            <label style="" class="item item-input">
+                <span class="input-label">Localisation</span>
+                <input placeholder="" type="text"  ng-model="stock.data.location">
+            </label>
+            <label style="" class="item item-input">
+                <span class="input-label">Destination</span>
+                <input placeholder="" type="text"  ng-model="stock.data.destination">
+            </label>
+            <a style="" class="button button-stable button-block  icon-left ion-android-attach" ng-click="addStock()" menu-close="">Valider</a>
+        </form>
+    </div>
+</div>

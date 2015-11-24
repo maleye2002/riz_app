@@ -1,0 +1,54 @@
+<div style="" class="list card">
+    <div class="item item-divider">Informations sur le riz</div>
+    <div class="item item-body">
+        <form style="" class="list">
+            <label style="" class="item item-input">
+                <span class="input-label">Date de stockage</span>
+                <input placeholder="" type="date"  ng-model="produit.riz.DateStock" >
+            </label>
+            <label style="" class="item item-input">
+                <span class="input-label">Variete</span>
+                <input placeholder="" type="text"  ng-model="produit.riz.variete">
+            </label>
+            <label style="" class="item item-input">
+                <span class="input-label">Quantite</span>
+                <input placeholder="" type="number"  ng-model="produit.riz.quantite">
+            </label>
+            <label style="" class="item item-select">
+                <span class="input-label">Categorie</span>
+                <select  ng-model="produit.riz.categorie" >
+                    <option value="v1">Entier</option>
+                    <option value="v2">Brise</option>
+                    <option value="v2">Intermediaire</option>
+                </select>
+            </label>
+            <label style="" class="item item-select">
+                    <span class="input-label">Qualite</span>
+                    <select  ng-model="produit.riz.qualite" >
+                        <option value="v1">Entier</option>
+                        <option value="v2">Brise</option>
+                        <option value="v2">Intermediaire</option>
+                    </select>
+                </label>
+            <label style="" class="item item-input">
+                    <span class="input-label">Lieu</span>
+                    <input placeholder="" type="text"  ng-model="produit.riz.lieu">
+            </label>
+            <label style="" class="item item-input">
+                <span class="input-label">Contact</span>
+                <input placeholder="" type="text"  ng-model="produit.riz.contact">
+            </label>
+            <label style="" class="item item-input">
+                <span class="input-label">Date Client</span>
+                <input placeholder="" type="date"  ng-model="produit.riz.DateClient">
+            </label>
+
+
+
+
+            <a style="" class="button button-stable button-block  icon-left ion-android-attach" ng-click="addProduit()" menu-close="">Valider</a>
+
+
+        </form>
+    </div>
+</div>
