@@ -49,16 +49,17 @@ angular.module('app.controllers', [])
 
     .controller('homeCtrl', function($scope,$http, store ) {
         $scope.message = null;
+        //http://localhost:63342/riz_app/www/api.json
         var data = store.getStore();
         console.log(JSON.stringify(data));
         $scope.message = {};
-        $scope.upload = function (){
-            var data = store.getStore();
-            $http.post('http://localhost:63342/riz_app/www/api.json',data)
+        $scope.uploadData = function (){
+            var data = {data: store.getStore()};
+            $http.post('https://cyber-riz-ameth.c9users.io/pages/bridge.php',data)
                 .then(function(resp) {
                     //$scope.conditions = resp.data.conditions;
                     $scope.message={msg:'sddsds', nClass:'button button-small button-full button-balanced'};
-                    store.updateStore({});
+                   // store.updateStore({});
                     console.log(store.getStore(), $scope.message);
 
                 }, function(err) {
