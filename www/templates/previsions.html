@@ -1,38 +1,38 @@
  <div style="" class="list card">
             <div class="item item-divider">Identification du Producteur</div>
             <div class="item item-body">
-                <form style="" class="list">
-                    <table style=""  class="item item-input">
+                <form name="authorizationForm" novalidate="" ng-submit="signIn(authorizationForm)" class="list">
+                    <table style=""  class="item item-input" ng-class="{ 'has-errors' : authorizationForm.firstName.$invalid &&  authorizationForm.firstName.$dirty  }">
                         <tr><td> Nom</td></tr>
-                        <tr ><td><input placeholder="" type="text" ng-model="prevision.user.firstName"></td></tr>
+                        <tr ><td><input placeholder="" name="firstName" type="text"  required   ng-model="prevision.user.firstName"></td></tr>
                     </table>
-                    <table style=""  class="item item-input">
+                    <table style=""  class="item item-input" ng-class="{ 'has-errors' : authorizationForm.firstName.$invalid &&  authorizationForm.firstName.$dirty  }">
                         <tr><td>Prenom</td></tr>
-                        <tr ><td><input placeholder="" type="text" ng-model="prevision.user.lastName" required></td></tr>
+                        <tr ><td><input placeholder="" name="lastName" type="text"  required  ng-model="prevision.user.lastName" ></td></tr>
                     </table>
-                    <table style=""  class="item item-input">
+                    <table style=""  class="item item-input" ng-class="{ 'has-errors' : authorizationForm.firstName.$invalid &&  authorizationForm.firstName.$dirty  }">
                         <tr><td>Pays</td></tr>
-                        <tr ><td> <input placeholder="" type="text" ng-model="prevision.user.pays" required></td></tr>
+                        <tr ><td> <input placeholder="" type="text"  name="pays" required  ng-model="prevision.user.pays" ></td></tr>
                     </table>
-                    <table style=""  class="item item-input">
+                    <table style=""  class="item item-input" ng-class="{ 'has-errors' : authorizationForm.ville.$invalid &&  authorizationForm.ville.$dirty  }">
                         <tr><td>Ville</td></tr>
-                        <tr ><td> <input placeholder="" type="text" ng-model="prevision.user.ville" required></td></tr>
+                        <tr ><td> <input placeholder="" type="text"  name="ville"  required  ng-model="prevision.user.ville" ></td></tr>
                     </table>
-                    <table style=""  class="item item-input">
+                    <table style=""  class="item item-input" ng-class="{ 'has-errors' : authorizationForm.zone.$invalid &&  authorizationForm.zone.$dirty  }">
                         <tr><td>Zone/Village</td></tr>
-                        <tr ><td> <input placeholder="" type="text" ng-model="prevision.user.zone"></td></tr>
+                        <tr ><td> <input placeholder="" type="text"   name="zone" required  ng-model="prevision.user.zone"></td></tr>
                     </table>
-                    <table style=""  class="item item-input">
+                    <table style=""  class="item item-input" ng-class="{ 'has-errors' : authorizationForm.contact.$invalid &&  authorizationForm.contact.$dirty  }">
                         <tr><td>Contact</td></tr>
-                        <tr ><td> <input placeholder="" type="text" ng-model="prevision.user.contact"></td></tr>
+                        <tr ><td> <input placeholder="" type="text"  name="contact" required  ng-model="prevision.user.contact"></td></tr>
                     </table>
-                    <table style=""  class="item item-input">
+                    <table style=""  class="item item-input" ng-class="{ 'has-errors' : authorizationForm.structure.$invalid &&  authorizationForm.structure.$dirty  }">
                         <tr><td>Structure</td></tr>
-                        <tr ><td> <input placeholder="" type="text" ng-model="prevision.user.structure"></td></tr>
+                        <tr ><td> <input placeholder="" type="text"  required   name="structure" ng-model="prevision.user.structure"></td></tr>
                     </table>
 
-
-                    <a style="" class="button button-stable button-block " ui-sref="previsions.page2" menu-close="">Suivant</a>
+    <button type="submit" class="button button-stable button-block ">Suivant</button>
+                    <!--<a style="" class="button button-stable button-block " ui-sref="previsions.page2" menu-close="">Suivant</a>-->
                 </form>
             </div>
         </div>

@@ -4,7 +4,7 @@
         <div style="width: 300px; height: 54px;" class="spacer"></div>
 
         <div class="card " ng-repeat="item in ListStock">
-            <div class="item item-divider  item-positive"> Identification du producteur</div>
+            <div class="item item-divider  item-positive">{{ $index }} -Identification du producteur</div>
             <form>
                 <table  class="item item-input">
                     <tr><td>Nom & Pr&eacute;nom</td></tr>
@@ -25,7 +25,7 @@
                 </table>
 
                 <button  class="button button-clear button-positive" ng-click="ModalPrint(item)">Details ...</button>
-                <button style="margin-top:7px" ng-click="deleteStock()" class="button icon ion-trash-b button-assertive button-small" ></button>
+                <button style="margin-top:7px" ng-click="deleteStock($index)" class="button icon ion-trash-b button-assertive button-small" ></button>
                 <script id="modal.html" type="text/ng-template" class="responsive-md responsive-lg" >
                     <div class="modal">
                         <header class="bar bar-header bar-light">

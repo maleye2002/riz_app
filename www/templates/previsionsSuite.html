@@ -2,36 +2,36 @@
             <div class="item item-divider">Informations sur le champ</div>
             <div class="item item-body">
                 <form style="" class="list">
-                    <table style="" class="item item-input">
+                    <table style="" class="item item-input" ng-class="{ 'has-errors' : authorizationForm.ann.$invalid &&  authorizationForm.ann.$dirty  }">
                        <tr><td>Année de campagne agricole</td></tr>
-                       <tr><td> <input placeholder="" type="text"  ng-model="prevision.data.anneeCampagne" ></td></tr>
+                       <tr><td> <input placeholder="" name="ann" type="text"  ng-model="prevision.data.anneeCampagne" ></td></tr>
                     </table>
-                    <table style="" name="dsdsds" class="item item-input">
+                    <table style="" name="dsdsds" class="item item-input" ng-class="{ 'has-errors' : authorizationForm.spec.$invalid &&  authorizationForm.spec.$dirty  }">
                         <tr ><td>Spéculation (Riz)</td></tr>
-                        <tr ><td><input placeholder="" type="text" ng-model="prevision.data.speculation"></td></tr>
+                        <tr ><td><input placeholder="" type="text" name="spec" ng-model="prevision.data.speculation"></td></tr>
                     </table>
-                    <table style="" class="item item-input">
+                    <table style="" class="item item-input" ng-class="{ 'has-errors' : authorizationForm.supe.$invalid &&  authorizationForm.supe.$dirty  }">
                         <tr><td>Superficie emblavée</td></tr>
-                        <tr><td> <input placeholder="" type="text"  ng-model="prevision.data.superficie"></td></tr>
+                        <tr><td> <input placeholder="" type="text"  name="supe" ng-model="prevision.data.superficie"></td></tr>
                     </table>
-                    <table style="" class="item item-select">
+                    <table style="" class="item item-select" >
                         <tr ><td>Catégorie Semence</td></tr>
                         <tr><td> <select  ng-model="prevision.data.categorie" >
                             <option value="R1">R1</option>
                             <option value="R2">R2</option>
                         </select></td></tr>
                     </table>
-                    <table style="" class="item item-input">
+                    <table style="" class="item item-input" ng-class="{ 'has-errors' : authorizationForm.var.$invalid &&  authorizationForm.var.$dirty  }">
                         <tr ><td>Variété&nbsp;</td></tr>
-                        <tr ><td> <input placeholder="" type="text"  ng-model="prevision.data.variete"></td></tr>
+                        <tr ><td> <input placeholder="" type="text" name="var" ng-model="prevision.data.variete"></td></tr>
                     </table>
-                    <table style="" class="item item-input">
+                    <table style="" class="item item-input" ng-class="{ 'has-errors' : authorizationForm.pp.$invalid &&  authorizationForm.pp.$dirty  }">
                         <tr ><td>Production prévue (T)</td></tr>
-                        <tr ><td><input placeholder="" type="text"  ng-model="prevision.data.productionPrevue"></td></tr>
+                        <tr ><td><input placeholder="" type="text" name="pp" ng-model="prevision.data.productionPrevue"></td></tr>
                     </table>
-                    <table style="" class="item item-input">
+                    <table style="" class="item item-input" ng-class="{ 'has-errors' : authorizationForm.loc.$invalid &&  authorizationForm.loc.$dirty  }">
                         <tr ><td>Localisation</td></tr>
-                        <tr ><td><input placeholder="" type="text"  ng-model="prevision.data.location"></td></tr>
+                        <tr ><td><input placeholder="" type="text"  name="loc" ng-model="prevision.data.location"></td></tr>
                     </table>
                     <table style="" class="item item-select">
                         <tr><td>Ecosystème</td></tr>

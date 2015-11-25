@@ -99,8 +99,21 @@ angular.module('app.controllers', [])
     .controller('previsionsCtrl', function($scope,$state, store) {
         $scope.prevision = {};
         $scope.addPrevision = addPrevision;
+        $scope.NextStep = nextStep;
 
+  function nextStep(form,link){
+
+      if(form.$valid) {
+          $state.go(link);
+      }
+  }
+        $scope.signIn = function(form) {
+            if(form.$valid) {
+                $state.go('previsions.page2');
+            }
+        };
         function addPrevision(){
+          console.log();
             store.addPrevision($scope.prevision);
             $scope.prevision = {};
             $state.go('home');

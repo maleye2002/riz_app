@@ -5,7 +5,7 @@
 
 
         <div class="card" ng-repeat="item in ListPrevision">
-            <div class="item item-divide item-positive"> Identification du producteur</div>
+            <div class="item item-divide item-positive">{{$index}} -Identification du producteur</div>
                            <form>
 
                                <table  class="item item-input">
@@ -29,7 +29,7 @@
 
 
                                <button  class="button button-clear button-positive" ng-click="ModalPrint(item)">Details ...</button>
-                               <button style="margin-top:7px" ng-click="deletePrevision()" class="button icon ion-trash-b button-assertive button-small" ></button>
+                               <button style="margin-top:7px" ng-click="deletePrevision($index)" class="button icon ion-trash-b button-assertive button-small" ></button>
                                <script id="modal.html" type="text/ng-template" class="responsive-md responsive-lg" >
                                    <div class="modal">
                                        <header class="bar bar-header bar-clear">
