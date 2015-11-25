@@ -130,13 +130,13 @@ angular.module('app.controllers', [])
         }
     })
 
-    .controller('archivePrevisionCtrl', function($scope,store) {
+    .controller('archivePrevisionCtrl', function($scope,store,$ionicPopup,$ionicModal) {
+
         $scope.ListStore =  store.getStore();
       $scope.ListPrevision = $scope.ListStore.prevision;
         console.log(store.getStore().prevision);
 
-        $scope.deletePrevision = function(id)
-       {
+        $scope.deletePrevision = function(id){
            $scope.ListStore.prevision.splice(id, 1);
 
            //store.getStore().prevision = $scope.ListPrevision;
@@ -146,6 +146,38 @@ angular.module('app.controllers', [])
 
 
        }
+        $ionicModal.fromTemplateUrl('modal.html', {
+            scope: $scope,
+            animation: 'slide-in-up'
+        }).then(function(modal) {
+            $scope.modal = modal;
+        });
+        $scope.openModal = function() {
+
+            $scope.modal.show();
+
+        };
+        $scope.ModalPrint = function(data){
+             $scope.modal.show();
+            $scope.data= data;
+            return $scope.data ;
+
+        }
+
+        $scope.closeModal = function() {
+            $scope.modal.hide();
+        };
+        $scope.$on('$destroy', function() {
+            $scope.modal.remove();
+        });
+        // Execute action on hide modal
+        $scope.$on('modal.hidden', function() {
+            // Execute action
+        });
+        // Execute action on remove modal
+        $scope.$on('modal.removed', function() {
+            // Execute action
+        });
 
     })
     .controller('archiveRecolteCtrl', function($scope,store) {
