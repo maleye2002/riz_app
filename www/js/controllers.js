@@ -30,7 +30,7 @@ angular.module('app.controllers', [])
             }
 
 
-        }
+        };
         $scope.testConnection = function() {
 
             $ionicPopup.alert({
@@ -80,18 +80,20 @@ angular.module('app.controllers', [])
             $http.post('https://cyber-riz-ameth.c9users.io/pages/bridge.php',data)
                 .then(function(resp) {
                     //$scope.conditions = resp.data.conditions;
-                    $scope.message={msg:'sddsds', nClass:'button button-small button-full button-balanced'};
-                   // store.updateStore({});
-                    alert(data);
-                    console.log(store.getStore(), $scope.message);
+                    if(resp.data.error != 0) {
+                        $scope.message={msg:'Erreur lors de la mise à jour', nClass:'button button-small button-full button-assertive'};
+                    }else{
+                        $scope.message={msg:'Mise à jour effectuée', nClass:'button button-small button-full button-balanced'};
+                        store.updateStore({});
+                    }
+                   // alert(data);
+                   // console.log(store.getStore(), $scope.message);
 
                 }, function(err) {
-                    console.error('ERR', err);
-                    $scope.message={msg:'sddsds', nClass:'button button-small button-full button-assertive'};
+                    //console.error('ERR', err);
+                    $scope.message={msg:'Erreur lors de la mise à jour', nClass:'button button-small button-full button-assertive'};
                     // err.status will contain the status code
                 });
-
-
             //$http.post('https://cyber-riz-ameth.c9users.io/pages/api.php')
         }
     })
@@ -265,9 +267,7 @@ angular.module('app.controllers', [])
            console.log( $scope.ListStore );
            store.updateStore($scope.ListStore);
            console.log(store.getStore());
-
-
-       }
+       };
         $ionicModal.fromTemplateUrl('modal.html', {
             scope: $scope,
             animation: 'slide-in-up'

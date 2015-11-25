@@ -35,48 +35,51 @@
                         <div style="margin-top:44px;">
                             <content  has-header="false" padding="true">
 
-<div class="card"><div class="item item-divider item-positive">Informations sur la production</div>
-                                <table style=""  class="item item-input">
-                                    <tr><td style="color: #387ef5;font-weight: bold"> Ann&eacute;e Campagne</td></tr>
-                                    <tr><td >{{ item.data.anneeCampagne }}</td></tr>
+                                <div class="card"><div class="item item-divider item-positive">Informations sur la production</div>
+                                    <table style=""  class="item item-input">
+                                        <tr><td style="color: #387ef5;font-weight: bold"> Ann&eacute;e Campagne</td></tr>
+                                        <tr><td >{{ item.data.anneeCampagne }}</td></tr>
 
-                                </table>
+                                    </table>
 
-                                <table style=""  class="item item-input">
-                                    <tr><td style="color:#387ef5;font-weight: bold">Sp&eacute;culation</td></tr>
-                                    <tr ><td>{{ item.data.speculation }}</td></tr>
-                                </table>
-                                <table style=""  class="item item-input">
-                                    <tr><td style="color:#387ef5;font-weight: bold"> Localisation</td></tr>
-                                    <tr ><td>{{ item.data.location }}</td></tr>
-                                </table>
-                                <table style=""  class="item item-input">
-                                    <tr><td style="color:#387ef5;font-weight: bold"> Vari&eacute;t&eacute;</td></tr>
-                                    <tr ><td>{{ item.data.variete }}</td></tr>
-                                </table>
-                                <table style=""  class="item item-input">
-                                    <tr><td style="color:#387ef5;font-weight: bold">Production pr&eacute;vue</td></tr>
-                                    <tr ><td>{{ item.data.productionPrevue }}</td></tr>
-                                </table>
-                                <table style=""  class="item item-input">
-                                    <tr><td style="color:#387ef5;font-weight: bold"> Cat&eacute;gorie Semence</td></tr>
-                                    <tr ><td>{{ item.data.categorie }}</td></tr>
-                                </table>
-                                <table style=""  class="item item-input">
-                                    <tr><td style="color: #387ef5;font-weight: bold"> Destination</td></tr>
-                                    <tr><td >{{ item.data.destination }}</td></tr>
-                                </table>
-</div>
+                                    <table style=""  class="item item-input">
+                                        <tr><td style="color:#387ef5;font-weight: bold">Sp&eacute;culation</td></tr>
+                                        <tr ><td>{{ item.data.speculation }}</td></tr>
+                                    </table>
+                                    <table style=""  class="item item-input">
+                                        <tr><td style="color:#387ef5;font-weight: bold"> Localisation</td></tr>
+                                        <tr ><td>{{ item.data.location }}</td></tr>
+                                    </table>
+                                    <table style=""  class="item item-input">
+                                        <tr><td style="color:#387ef5;font-weight: bold"> Vari&eacute;t&eacute;</td></tr>
+                                        <tr ><td>{{ item.data.variete }}</td></tr>
+                                    </table>
+                                    <table style=""  class="item item-input">
+                                        <tr><td style="color:#387ef5;font-weight: bold">Production pr&eacute;vue</td></tr>
+                                        <tr ><td>{{ item.data.productionPrevue }}</td></tr>
+                                    </table>
+                                    <table style=""  class="item item-input">
+                                        <tr><td style="color:#387ef5;font-weight: bold"> Cat&eacute;gorie Semence</td></tr>
+                                        <tr ><td>{{ item.data.categorie }}</td></tr>
+                                    </table>
+                                    <table style=""  class="item item-input">
+                                        <tr><td style="color: #387ef5;font-weight: bold"> Destination</td></tr>
+                                        <tr><td >{{ item.data.destination }}</td></tr>
+                                    </table>
+                                </div>
                             </content>
                         </div>
                     </div>
                 </script>
             </form>
 
-            </div>
         </div>
 
-
+        <!--<button ng-hide="ListStock" style="" class="button button-balanced button-block" ng-click="NewCompte()">Liste vide. Ajouter une entr&eacute;e</button>-->
 
     </ion-content>
+    <div ng-hide="ListStock" class="bar bar-footer bar-energized">
+        <div class="title"> Liste vide :( </div>
+    </div>
+
 </ion-view>
