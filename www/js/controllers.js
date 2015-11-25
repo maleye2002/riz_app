@@ -91,12 +91,13 @@ angular.module('app.controllers', [])
                         $scope.message={msg:'Erreur lors de la mise à jour', nClass:'button button-small button-full button-assertive'};
                     }
                    // alert(data);
-                    console.log(store.getStore(), resp);
+                    console.log(resp);
 
                 }, function(err) {
                     //console.error('ERR', err);
-                    $scope.message={msg:'Erreur lors de la mise à jour', nClass:'button button-small button-full button-assertive'};
+                    $scope.message={msg:'Erreur lors de la mise à jour, Avez vous une connexion internet active ?', nClass:'button button-small button-full button-assertive'};
                     console.log(err);
+                    
                     // err.status will contain the status code
                 });
             //$http.post('https://cyber-riz-ameth.c9users.io/pages/api.php')
@@ -104,7 +105,7 @@ angular.module('app.controllers', [])
         
         function viderStore(){
             store.updateStore({});
-            $state.go('home', {reload:true});
+            $state.go('home', {}, {reload:true});
         }
     })
 
