@@ -5,70 +5,72 @@
 
 
         <div class="card" ng-repeat="item in ListPrevision">
-            <div class="item item-divider"></div>
+            <div class="item item-divide item-positive"> Identification du producteur</div>
                            <form>
-                               <label style=""  class="item item-input">
-                                   <span class="input-label">Nom & Pr&eacute;nom</span>
-                                   {{ item.user.firstName}}   &nbsp; {{ item.data.anneeCampagne}}
-                               </label>
-                               <label style=""  class="item item-input">
-                                   <span class="input-label">Lieu</span>
-                                   {{ item.user.pays}} &nbsp; {{ item.user.ville}}  &nbsp;   {{ item.user.zone }}
-                               </label>
-                               <label style=""  class="item item-input">
-                                   <span class="input-label">Last name</span>
-                                   {{ item.user.firstName}}
-                               </label>
-                               <label style=""  class="item item-input">
-                                   <span class="input-label">Contact</span>
-                                   {{ item.user.contact}}
-                               </label>
-                               <label style=""  class="item item-input">
-                                   <span class="input-label">Structure</span>
-                                   {{ item.user.structure}}
-                               </label>
-                               <button  class="button button-clear button-positive" ng-click="ModalPrint(item.data)">Details ...</button>
+
+                               <table  class="item item-input">
+                                   <tr><td>Nom & Pr&eacute;nom</td></tr>
+                                   <tr><td>{{ item.user.firstName}}   &nbsp; {{ item.user.lastName}}</td></tr>
+                               </table>
+                               <table  class="item item-input">
+                                   <tr><td>Lieu</td></tr>
+                                   <tr><td>  {{ item.user.pays}} &nbsp; {{ item.user.ville}}  &nbsp;   {{ item.user.zone }}</td></tr>
+                               </table>
+                               <table  class="item item-input">
+                                   <tr><td>Contact</td></tr>
+                                   <tr><td> {{ item.user.contact}}</td></tr>
+                               </table>
+
+                               <table  class="item item-input">
+                                   <tr><td>Structure</td></tr>
+                                   <tr><td>  {{ item.user.structure}}</td></tr>
+                               </table>
+
+
+
+                               <button  class="button button-clear button-positive" ng-click="ModalPrint(item)">Details ...</button>
                                <button style="margin-top:7px" ng-click="deletePrevision()" class="button icon ion-trash-b button-assertive button-small" ></button>
                                <script id="modal.html" type="text/ng-template" class="responsive-md responsive-lg" >
                                    <div class="modal">
-                                       <header class="bar bar-header bar-positive">
-                                           <h1 class="title">Informations sur le champ</h1>
-                                           <div class="button button-clear" ng-click="modal.hide()"><span class="icon ion-close"></span></div>
+                                       <header class="bar bar-header bar-clear">
+                                           <h1 class="title " style="color:#387ef5;"> {{ item.user.firstName}}   &nbsp; {{ item.user.lastName}}</h1>
+                                           <div class="button button-positive" ng-click="modal.hide()"><span class="icon ion-close"></span></div>
                                        </header>
                                        <div style="margin-top:44px;">
                                        <content  has-header="false" padding="true">
 
-
+<div class="card"><div class="item item-divider item-positive">Informations sur le champ</div>
                                                <table style=""  class="item item-input">
                                                    <tr><td style="color: #387ef5;font-weight: bold"> Ann&eacute;e Campagne</td></tr>
-                                                   <tr><td >{{ data.anneeCampagne }}</td></tr>
+                                                   <tr><td >{{ item.data.anneeCampagne }}</td></tr>
 
                                                </table>
 
                                                <table style=""  class="item item-input">
                                                    <tr><td style="color:#387ef5;font-weight: bold">Sp&eacute;culation</td></tr>
-                                                   <tr ><td>{{ data.speculation }}</td></tr>
+                                                   <tr ><td>{{ item.data.speculation }}</td></tr>
                                                </table>
                                            <table style=""  class="item item-input">
-                                               <tr><td style="color:#387ef5;font-weight: bold"> Location</td></tr>
-                                               <tr ><td>{{ data.location }}</td></tr>
+                                               <tr><td style="color:#387ef5;font-weight: bold"> Localisation</td></tr>
+                                               <tr ><td>{{ item.data.location }}</td></tr>
                                            </table>
                                            <table style=""  class="item item-input">
                                                <tr><td style="color:#387ef5;font-weight: bold"> Vari&eacute;t&eacute;</td></tr>
-                                               <tr ><td>{{ data.variete }}</td></tr>
+                                               <tr ><td>{{ item.data.variete }}</td></tr>
                                            </table>
                                            <table style=""  class="item item-input">
                                                <tr><td style="color:#387ef5;font-weight: bold">Production pr&eacute;vue</td></tr>
-                                               <tr ><td>{{ data.productionPrevue }}</td></tr>
+                                               <tr ><td>{{ item.data.productionPrevue }}</td></tr>
                                            </table>
                                            <table style=""  class="item item-input">
                                                <tr><td style="color:#387ef5;font-weight: bold"> Cat&eacute;gorie Semence</td></tr>
-                                               <tr ><td>{{ data.categorie }}</td></tr>
+                                               <tr ><td>{{ item.data.categorie }}</td></tr>
                                            </table>
                                            <table style=""  class="item item-input">
                                                <tr><td style="color: #387ef5;font-weight: bold"> Ecosyst&egrave;me</td></tr>
-                                               <tr><td >{{ data.ecosysteme }}</td></tr>
+                                               <tr><td >{{ item.data.ecosysteme }}</td></tr>
                                            </table>
+</div>
                                        </content>
                                        </div>
                                    </div>

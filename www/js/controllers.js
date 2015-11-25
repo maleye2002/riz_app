@@ -159,8 +159,9 @@ angular.module('app.controllers', [])
         };
         $scope.ModalPrint = function(data){
              $scope.modal.show();
-            $scope.data= data;
-            return $scope.data ;
+            $scope.item = data;
+
+            return $scope.item ;
 
         }
 
@@ -180,7 +181,7 @@ angular.module('app.controllers', [])
         });
 
     })
-    .controller('archiveRecolteCtrl', function($scope,store) {
+    .controller('archiveRecolteCtrl', function($scope,store,$ionicModal) {
         $scope.ListStore =  store.getStore();
         $scope.ListStock = $scope.ListStore.stock;
         console.log(store.getStore().stock);
@@ -196,9 +197,42 @@ angular.module('app.controllers', [])
 
 
         }
+        $ionicModal.fromTemplateUrl('modal.html', {
+            scope: $scope,
+            animation: 'slide-in-up'
+        }).then(function(modal) {
+            $scope.modal = modal;
+        });
+        $scope.openModal = function() {
+
+            $scope.modal.show();
+
+        };
+        $scope.ModalPrint = function(data){
+            $scope.modal.show();
+            $scope.item= data;
+
+            return $scope.item ;
+
+        }
+
+        $scope.closeModal = function() {
+            $scope.modal.hide();
+        };
+        $scope.$on('$destroy', function() {
+            $scope.modal.remove();
+        });
+        // Execute action on hide modal
+        $scope.$on('modal.hidden', function() {
+            // Execute action
+        });
+        // Execute action on remove modal
+        $scope.$on('modal.removed', function() {
+            // Execute action
+        });
 
     })
-    .controller('archiveProduitCtrl', function($scope,store) {
+    .controller('archiveProduitCtrl', function($scope,store,$ionicModal) {
         $scope.ListStore =  store.getStore();
         $scope.ListProduit = $scope.ListStore.produit;
         console.log(store.getStore().produit);
@@ -214,7 +248,44 @@ angular.module('app.controllers', [])
 
 
         }
+        $ionicModal.fromTemplateUrl('modal.html', {
+            scope: $scope,
+            animation: 'slide-in-up'
+        }).then(function(modal) {
+            $scope.modal = modal;
+        });
+        $ionicModal.fromTemplateUrl('modalRiz.html', {
+            scope: $scope,
+            animation: 'slide-in-up'
+        }).then(function(modal) {
+            $scope.modal = modal;
+        });
+        $scope.openModal = function() {
 
+            $scope.modal.show();
+
+        };
+        $scope.ModalPrint = function(data){
+            $scope.modal.show();
+            $scope.item= data;
+            return $scope.item ;
+
+        }
+
+        $scope.closeModal = function() {
+            $scope.modal.hide();
+        };
+        $scope.$on('$destroy', function() {
+            $scope.modal.remove();
+        });
+        // Execute action on hide modal
+        $scope.$on('modal.hidden', function() {
+            // Execute action
+        });
+        // Execute action on remove modal
+        $scope.$on('modal.removed', function() {
+            // Execute action
+        });
     })
     .controller('EditCtrl', function($scope,store,$state,$ionicPopup) {
         $scope.user={};

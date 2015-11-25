@@ -2,45 +2,45 @@
     <div class="item item-divider">Informations sur le paddy</div>
     <div class="item item-body">
         <form style="" class="list">
-            <label style="" class="item item-input">
-                <span class="input-label">Nom fournisseur</span>
-                <input placeholder="" type="text"  ng-model="produit.paddy.firstName" >
-            </label>
-            <label style="" class="item item-input">
-                <span class="input-label">Prenom fournisseur</span>
-                <input placeholder="" type="text"  ng-model="produit.paddy.lastName" >
-            </label>
-            <label style="" class="item item-input">
-                <span class="input-label">Type</span>
-                <input placeholder="" type="text"  ng-model="produit.paddy.type">
-            </label>
-            <label style="" class="item item-input">
-                <span class="input-label">Lieu</span>
-                <input placeholder="" type="text"  ng-model="produit.paddy.lieu">
-            </label>
-            <label style="" class="item item-input">
-                <span class="input-label">Contact</span>
-                <input placeholder="" type="text"  ng-model="produit.paddy.contact">
-            </label>
-            <label style="" class="item item-input">
-                <span class="input-label">Date</span>
-                <input placeholder="" type="Date"  ng-model="produit.paddy.date">
-            </label>
-            <label style="" class="item item-input">
-                <span class="input-label">Variété&nbsp;</span>
-                <input placeholder="" type="text"  ng-model="produit.paddy.variete">
-            </label>
-            <label style="" class="item item-input">
-                <span class="input-label">Quantite(T)</span>
-                <input placeholder="" type="number"  ng-model="produit.paddy.quantite">
-            </label>
-            <label style="" class="item item-select">
-                <span class="input-label">Qualite</span>
-                <select  ng-model="produit.paddy.qualite" >
+            <table style="" class="item item-input">
+                <tr><td>Nom fournisseur</td></tr>
+                <tr><td><input placeholder="" type="text"  ng-model="produit.paddy.firstName" ></td></tr>
+            </table>
+            <table style="" class="item item-input">
+                <tr><td>Prenom fournisseur</td></tr>
+                <tr><td> <input placeholder="" type="text"  ng-model="produit.paddy.lastName" ></td></tr>
+            </table>
+            <table style="" class="item item-input">
+                <tr><td>Type</td></tr>
+                <tr><td> <input placeholder="" type="text"  ng-model="produit.paddy.type"></td></tr>
+            </table>
+            <table style="" class="item item-input">
+                <tr><td>Lieu</td></tr>
+                <tr><td><input placeholder="" type="text"  ng-model="produit.paddy.lieu"></td></tr>
+            </table>
+            <table style="" class="item item-input">
+                <tr><td>Contact</td></tr>
+                <tr><td>  <input placeholder="" type="text"  ng-model="produit.paddy.contact"></td></tr>
+            </table>
+            <table style="" class="item item-input">
+                <tr><td>Date</td></tr>
+                <tr><td> <input placeholder="" type="Date"  ng-model="produit.paddy.date"></td></tr>
+            </table>
+            <table style="" class="item item-input">
+                <tr><td>Variété&nbsp;</td></tr>
+                <tr><td> <input placeholder="" type="text"  ng-model="produit.paddy.variete"></td></tr>
+            </table>
+            <table style="" class="item item-input">
+                <tr><td>Quantite(T)</td></tr>
+                <tr><td> <input placeholder="" type="number"  ng-model="produit.paddy.quantite"></td></tr>
+            </table>
+            <table style="" class="item item-select">
+                <tr><td>Qualite</td></tr>
+                <tr><td> <select  ng-model="produit.paddy.qualite" >
                     <option value="v1">Q1</option>
                     <option value="v2">Q2</option>
-                </select>
-            </label>
+                </select></td></tr>
+            </table>
 
 
             <a style="" class="button button-stable button-block"  ui-sref="produit.page3"   menu-close="">Suivant</a>
