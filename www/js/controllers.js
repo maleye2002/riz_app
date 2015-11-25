@@ -69,12 +69,14 @@ angular.module('app.controllers', [])
 
     })
 
-    .controller('homeCtrl', function($scope,$http, store, $ionicPopup, $timeout ) {
+    .controller('homeCtrl', function($scope,$http, store, $ionicPopup, $timeout, $state ) {
         $scope.message = null;
         //http://localhost:63342/riz_app/www/api.json
         var data = store.getStore();
         console.log(JSON.stringify(data));
         $scope.message = {};
+        $scope.viderStore = viderStore;
+        
         $scope.uploadData = function (){
             var data = {data: store.getStore()};
             $http.post('https://cyber-riz-ameth.c9users.io/pages/post_all_data.php',data)
@@ -98,6 +100,11 @@ angular.module('app.controllers', [])
                     // err.status will contain the status code
                 });
             //$http.post('https://cyber-riz-ameth.c9users.io/pages/api.php')
+        };
+        
+        function viderStore(){
+            store.updateStore({});
+            $state.go('home', {reload:true});
         }
     })
 
