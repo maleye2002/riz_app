@@ -80,7 +80,9 @@ angular.module('app.controllers', [])
             $http.post('https://cyber-riz-ameth.c9users.io/pages/post_all_data.php',data)
                 .then(function(resp) {
                     //$scope.conditions = resp.data.conditions;
-                    if(resp.data && resp.data.form_1.error == 0 && resp.data.form_2.error == 0 && resp.data.form_3.error == 0) {
+                    if(  resp.data.form_1 && resp.data.form_1.error == 0  && 
+                         resp.data.form_2 && resp.data.form_2.error == 0  &&
+                         resp.data.form_3 && resp.data.form_3.error == 0) {
                         $scope.message={msg:'Mise à jour effectuée', nClass:'button button-small button-full button-balanced'};
                         store.updateStore({});
                     }else{
@@ -92,6 +94,7 @@ angular.module('app.controllers', [])
                 }, function(err) {
                     //console.error('ERR', err);
                     $scope.message={msg:'Erreur lors de la mise à jour', nClass:'button button-small button-full button-assertive'};
+                    console.log(err);
                     // err.status will contain the status code
                 });
             //$http.post('https://cyber-riz-ameth.c9users.io/pages/api.php')
