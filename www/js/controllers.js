@@ -77,7 +77,7 @@ angular.module('app.controllers', [])
         $scope.message = {};
         $scope.uploadData = function (){
             var data = {data: store.getStore()};
-            $http.post('https://cyber-riz-ameth.c9users.io/pages/bridge.php',data)
+            $http.post('https://cyber-riz-ameth.c9users.io/pages/post_all_data.php',data)
                 .then(function(resp) {
                     //$scope.conditions = resp.data.conditions;
                     if(resp.data && resp.data.form_1.error == 0 && resp.data.form_2.error == 0 && resp.data.form_3.error == 0) {
