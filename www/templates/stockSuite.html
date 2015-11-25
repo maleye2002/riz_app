@@ -4,7 +4,7 @@
         <form name="authorizationForm" novalidate="" class="list" ng-submit="addStock(authorizationForm)">
             <table style="" class="item item-input">
                 <tr><td>Année de campagne agricole</td></tr>
-                <tr><td> <input placeholder="" type="text" required ng-model="stock.data.anneeCampagne" ></td></tr>
+                <tr><td> <input placeholder="" type="number" required ng-model="stock.data.anneeCampagne" ></td></tr>
             </table>
             <table style="" name="dsdsds" class="item item-input">
                 <tr><td>Spéculation (Riz)</td></tr>
@@ -12,7 +12,7 @@
             </table>
             <table style="" class="item item-input">
                 <tr><td>Superficie emblavée</td></tr>
-                <tr><td><input placeholder="" type="text" required ng-model="stock.data.superficie"></td></tr>
+                <tr><td><input placeholder="" type="number" required ng-model="stock.data.superficie"></td></tr>
             </table>
             <table style="" class="item item-select">
                 <tr><td>Catégorie Semence</td></tr>
@@ -37,7 +37,7 @@
                 <tr><td>Destination</td></tr>
                 <tr><td> <input placeholder="" type="text" required  ng-model="stock.data.destination"></td></tr>
             </table>
-            <button  class="button button-stable button-block  icon-left ion-android-attach" type="submit"> Valider </button>
+            <button  class="button button-stable button-block  icon-left ion-android-create" type="submit"> Valider </button>
             <!--<a style="" class="button button-stable button-block  icon-left ion-android-attach" ng-click="addStock()" menu-close="">Valider</a>-->
         </form>
     </div>
