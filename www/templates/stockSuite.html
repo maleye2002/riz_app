@@ -1,18 +1,18 @@
 <div style="" class="list card">
     <div class="item item-divider">Informations sur le champ</div>
     <div class="item item-body">
-        <form style="" class="list">
+        <form name="authorizationForm" novalidate="" class="list" ng-submit="addStock(authorizationForm)">
             <table style="" class="item item-input">
                 <tr><td>Année de campagne agricole</td></tr>
-                <tr><td> <input placeholder="" type="text"  ng-model="stock.data.anneeCampagne" ></td></tr>
+                <tr><td> <input placeholder="" type="text" required ng-model="stock.data.anneeCampagne" ></td></tr>
             </table>
             <table style="" name="dsdsds" class="item item-input">
                 <tr><td>Spéculation (Riz)</td></tr>
-                <tr><td> <input placeholder="" type="text" ng-model="stock.data.speculation"></td></tr>
+                <tr><td> <input placeholder="" type="text" required ng-model="stock.data.speculation"></td></tr>
             </table>
             <table style="" class="item item-input">
                 <tr><td>Superficie emblavée</td></tr>
-                <tr><td><input placeholder="" type="text"  ng-model="stock.data.superficie"></td></tr>
+                <tr><td><input placeholder="" type="text" required ng-model="stock.data.superficie"></td></tr>
             </table>
             <table style="" class="item item-select">
                 <tr><td>Catégorie Semence</td></tr>
@@ -23,21 +23,22 @@
             </table>
             <table style="" class="item item-input">
                 <tr><td>Variété&nbsp;</td></tr>
-                <tr><td> <input placeholder="" type="text"  ng-model="stock.data.variete"></td></tr>
+                <tr><td> <input placeholder="" type="text" required  ng-model="stock.data.variete"></td></tr>
             </table>
             <table style="" class="item item-input">
                 <tr><td>Production prévue (T)</td></tr>
-                <tr><td> <input placeholder="" type="text"  ng-model="stock.data.productionPrevue"></td></tr>
+                <tr><td> <input placeholder="" type="text" required  ng-model="stock.data.productionPrevue"></td></tr>
             </table>
             <table style="" class="item item-input">
                 <tr><td>Localisation</td></tr>
-                <tr><td>  <input placeholder="" type="text"  ng-model="stock.data.location"></td></tr>
+                <tr><td>  <input placeholder="" type="text" required ng-model="stock.data.location"></td></tr>
             </table>
             <table style="" class="item item-input">
                 <tr><td>Destination</td></tr>
-                <tr><td> <input placeholder="" type="text"  ng-model="stock.data.destination"></td></tr>
+                <tr><td> <input placeholder="" type="text" required  ng-model="stock.data.destination"></td></tr>
             </table>
-            <a style="" class="button button-stable button-block  icon-left ion-android-attach" ng-click="addStock()" menu-close="">Valider</a>
+            <button  class="button button-stable button-block  icon-left ion-android-attach" type="submit"> Valider </button>
+            <!--<a style="" class="button button-stable button-block  icon-left ion-android-attach" ng-click="addStock()" menu-close="">Valider</a>-->
         </form>
     </div>
 </div>

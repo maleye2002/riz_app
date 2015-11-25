@@ -1,18 +1,18 @@
 <div style="" class="list card">
     <div class="item item-divider">Informations sur le riz</div>
     <div class="item item-body">
-        <form style="" class="list">
+        <form name="authorizationForm" novalidate="" class="list" ng-submit="addProduit(authorizationForm)">
             <table style="" class="item item-input">
                 <tr><td>Date de stockage<td></tr>
-                <tr><td><input placeholder="" type="date"  ng-model="produit.riz.DateStock" ><td></tr>
+                <tr><td><input placeholder="" type="date" name="sdate" required  ng-model="produit.riz.sDate" ><td></tr>
             </table>
             <table style="" class="item item-input">
                 <tr><td>Variete<td></tr>
-                <tr><td>  <input placeholder="" type="text"  ng-model="produit.riz.variete"><td></tr>
+                <tr><td>  <input placeholder="" type="text" name="var" required  ng-model="produit.riz.variete"><td></tr>
             </table>
             <table style="" class="item item-input">
                 <tr><td>Quantite<td></tr>
-                <tr><td> <input placeholder="" type="number"  ng-model="produit.riz.quantite"><td></tr>
+                <tr><td> <input placeholder="" type="number" required name="qu" ng-model="produit.riz.quantite"><td></tr>
             </table>
             <table style="" class="item item-select">
                 <tr><td>Categorie<td></tr>
@@ -32,21 +32,21 @@
                 </table>
             <table style="" class="item item-input">
                     <tr><td>Lieu<td></tr>
-                <tr><td>  <input placeholder="" type="text"  ng-model="produit.riz.lieu"><td></tr>
+                <tr><td>  <input placeholder="" type="text"  required name="lieu" ng-model="produit.riz.lieu"><td></tr>
             </table>
             <table style="" class="item item-input">
                 <tr><td>Contact<td></tr>
-                <tr><td> <input placeholder="" type="text"  ng-model="produit.riz.contact"><td></tr>
+                <tr><td> <input placeholder="" type="text" name="con" required ng-model="produit.riz.contact"><td></tr>
             </table>
             <table style="" class="item item-input">
                 <tr><td>Date Client<td></tr>
-                <tr><td><input placeholder="" type="date"  ng-model="produit.riz.DateClient"><td></tr>
+                <tr><td><input placeholder="" type="date" required name="cdate" ng-model="produit.riz.cDate"><td></tr>
             </table>
 
 
+<button type="submit" class="button button-stable button-block  icon-left ion-android-attach">Valider</button>
 
-
-            <a style="" class="button button-stable button-block  icon-left ion-android-attach" ng-click="addProduit()" menu-close="">Valider</a>
+            <!--<a style="" class="button button-stable button-block  icon-left ion-android-attach" ng-click="addProduit()" menu-close="">Valider</a>-->
 
 
         </form>

@@ -96,7 +96,7 @@ angular.module('app.controllers', [])
         }
     })
 
-    .controller('previsionsCtrl', function($scope,$state, store) {
+    .controller('previsionsCtrl', function($scope,$state, store,$ionicPopup) {
         $scope.prevision = {};
         $scope.addPrevision = addPrevision;
         $scope.NextStep = nextStep;
@@ -106,41 +106,150 @@ angular.module('app.controllers', [])
       if(form.$valid) {
           $state.go(link);
       }
+
   }
         $scope.signIn = function(form) {
             if(form.$valid) {
                 $state.go('previsions.page2');
             }
+            else
+            {
+                $ionicPopup.alert({
+                    title: 'Cyber-Riz',
+                    template: 'Saisir toutes les champs SVP ',
+                    buttons: [{
+                        text: 'Ok',
+                        type: 'button-assertive'
+
+                    }]
+                });
+            }
         };
-        function addPrevision(){
-          console.log();
-            store.addPrevision($scope.prevision);
-            $scope.prevision = {};
-            $state.go('home');
+        function addPrevision(form){
+
+            if(form.$valid) {
+                store.addPrevision($scope.prevision);
+                $scope.prevision = {};
+                $state.go('home');
+            }
+            else
+            {
+                $ionicPopup.alert({
+                    title: 'Cyber-Riz',
+                    template: 'Saisir toutes les champs SVP ',
+                    buttons: [{
+                        text: 'Ok',
+                        type: 'button-assertive'
+
+                    }]
+                });
+            }
+
         }
 
     })
 
-    .controller('stockCtrl', function($scope,$state,store) {
+    .controller('stockCtrl', function($scope,$state,store,$ionicPopup) {
         $scope.stock = {};
         $scope.addStock = addStock;
+        $scope.sign = function(form) {
+            if(form.$valid) {
+                $state.go('stock.page2');
+            }
+            else
+            {
+                $ionicPopup.alert({
+                    title: 'Cyber-Riz',
+                    template: 'Saisir toutes les champs SVP ',
+                    buttons: [{
+                        text: 'Ok',
+                        type: 'button-assertive'
 
-        function addStock(){
-            store.addStock($scope.stock);
-            $scope.stock = {};
-            $state.go('home');
+                    }]
+                });
+            }
+        };
+        function addStock(form){
+
+
+            if(form.$valid) {
+                store.addStock($scope.stock);
+                $scope.stock = {};
+                $state.go('home');
+            }
+            else
+            {
+                $ionicPopup.alert({
+                    title: 'Cyber-Riz',
+                    template: 'Saisir toutes les champs SVP ',
+                    buttons: [{
+                        text: 'Ok',
+                        type: 'button-assertive'
+
+                    }]
+                });
+            }
         }
     })
 
-    .controller('produitCtrl', function($scope,$state,store) {
+    .controller('produitCtrl', function($scope,$state,store,$ionicPopup) {
         $scope.produit = {};
         $scope.addProduit = addProduit;
+        $scope.signIn = function(form) {
+            if(form.$valid) {
+                $state.go('produit.page2');
+            }
+            else
+            {
+                $ionicPopup.alert({
+                    title: 'Cyber-Riz',
+                    template: 'Saisir toutes les champs SVP ',
+                    buttons: [{
+                        text: 'Ok',
+                        type: 'button-assertive'
 
-        function addProduit(){
-            store.addProduit($scope.produit);
-            $scope.stock = {};
-            $state.go('home');
+                    }]
+                });
+            }
+        };
+        $scope.sign = function(form) {
+            if(form.$valid) {
+                $state.go('produit.page3');
+            }
+            else
+            {
+                $ionicPopup.alert({
+                    title: 'Cyber-Riz',
+                    template: 'Saisir toutes les champs SVP ',
+                    buttons: [{
+                        text: 'Ok',
+                        type: 'button-assertive'
+
+                    }]
+                });
+            }
+        };
+        function addProduit(form){
+
+            if(form.$valid) {
+                store.addProduit($scope.produit);
+                $scope.stock = {};
+                $state.go('home');
+            }
+            else
+            {
+                $ionicPopup.alert({
+                    title: 'Cyber-Riz',
+                    template: 'Saisir toutes les champs SVP ',
+                    buttons: [{
+                        text: 'Ok',
+                        type: 'button-assertive'
+
+                    }]
+                });
+            }
         }
+
     })
 
     .controller('archivePrevisionCtrl', function($scope,store,$ionicPopup,$ionicModal) {

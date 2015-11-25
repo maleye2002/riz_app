@@ -1,36 +1,37 @@
 <div style="" class="list card">
     <div class="item item-divider">Identification du Producteur</div>
     <div class="item item-body">
-        <form style="" class="list">
+        <form name="authorizationForm" novalidate="" ng-submit="sign(authorizationForm)" class="list">
             <table style="" class="item item-input">
                 <tr><td>Nom</td></tr>
-                <tr><td><input placeholder="" type="text" ng-model="stock.user.firstName">
+                <tr><td><input placeholder="" name="firstName" required type="text" ng-model="stock.user.firstName">
             </table>
             <table style="" class="item item-input">
                 <tr><td>Prenom</td></tr>
-                <tr><td> <input placeholder="" type="text" ng-model="stock.user.lastName"></td></tr>
+                <tr><td> <input placeholder="" name="lastName" required type="text" ng-model="stock.user.lastName"></td></tr>
             </table>
             <table style="" class="item item-input">
                 <tr><td>Pays</td></tr>
-                <tr><td> <input placeholder="" type="text" ng-model="stock.user.pays"></td></tr>
+                <tr><td> <input placeholder=""name="pays" required type="text" ng-model="stock.user.pays"></td></tr>
             </table>
             <table style="" class="item item-input">
                 <tr><td>Ville</td></tr>
-                <tr><td> <input placeholder="" type="text" ng-model="stock.user.ville"></td></tr>
+                <tr><td> <input placeholder="" name="ville"  required type="text" ng-model="stock.user.ville"></td></tr>
             </table>
             <table style="" class="item item-input">
                 <tr><td>Zone/Village</td></tr>
-                <tr><td> <input placeholder="" type="text" ng-model="stock.user.zone"></td></tr>
+                <tr><td> <input placeholder="" name="zone"  required type="text" ng-model="stock.user.zone"></td></tr>
             </table>
             <table style="" class="item item-input">
                 <tr><td>Contact</td></tr>
-                <tr><td>  <input placeholder="" type="text" ng-model="stock.user.contact"></td></tr>
+                <tr><td>  <input placeholder="" name="contact" required type="text" ng-model="stock.user.contact"></td></tr>
             </table>
             <table style="" class="item item-input">
                 <tr><td>Structure</td></tr>
-                <tr><td>  <input placeholder="" type="text" ng-model="stock.user.structure"></td></tr>
+                <tr><td>  <input placeholder="" name="structure" required type="text" ng-model="stock.user.structure"></td></tr>
             </table>
-            <a style="" class="button button-stable button-block " ui-sref="stock.page2" menu-close="">Suivant</a>
+            <button type="submit" class="button button-stable button-block ">Suivant</button>
+            <!--<a style="" class="button button-stable button-block " ui-sref="stock.page2" menu-close="">Suivant</a>-->
         </form>
     </div>
 </div>
