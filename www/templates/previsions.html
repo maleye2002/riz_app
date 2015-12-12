@@ -26,9 +26,18 @@
                         <tr><td>Contact</td></tr>
                         <tr ><td> <input placeholder="" type="text"  name="contact" required  ng-model="prevision.user.contact"></td></tr>
                     </table>
-                    <table style=""  class="item item-input">
+                    <!--<table style=""  class="item item-input">
                         <tr><td>Structure</td></tr>
                         <tr ><td> <input placeholder="" type="text"  required   name="structure" ng-model="prevision.user.structure"></td></tr>
+                    </table>-->
+                    <table style="" class="item item-select">
+                        <tr ><td>Type de Structure</td></tr>
+                        <tr><td> <select  ng-model="prevision.user.structure" >
+                            <option value="R1">Coopérative</option>
+                            <option value="R2">Union</option>
+                            <option value="R2">GIE</option>
+                            <option value="R2">Entreprise privée</option>
+                        </select></td></tr>
                     </table>
 
     <button type="submit" class="button button-stable button-block ">Suivant</button>

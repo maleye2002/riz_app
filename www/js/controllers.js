@@ -210,6 +210,7 @@ angular.module('app.controllers', [])
         $scope.addProduit = addProduit;
         $scope.signIn = function(form) {
             if(form.$valid) {
+               
                 $state.go('produit.page2');
             }
             else
@@ -246,7 +247,8 @@ angular.module('app.controllers', [])
 
             if(form.$valid) {
                 store.addProduit($scope.produit);
-                $scope.stock = {};
+               // $scope.stock = {};
+                $scope.produit = {};
                 $state.go('home');
             }
             else
