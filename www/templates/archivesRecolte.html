@@ -1,6 +1,11 @@
 <ion-view style="" title="Archives Recoltes">
+    <ui-sref="home.back"> <ion-nav-bar>
+  <ion-nav-back-button class="button-clear">
+    <i class="ion-arrow-left-c"></i> retour
+  </ion-nav-back-button>
+</ion-nav-bar></ui-sref>
     <ion-content class="has-header" padding="'true'">
-        <h1 style="">REMUGOL</h1>
+        <h1 style="text-align:center">REMUGOL</h1>
         <div style="width: 300px; height: 54px;" class="spacer"></div>
 
         <div class="card " ng-repeat="item in ListStock">

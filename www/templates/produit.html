@@ -1,38 +1,71 @@
 <div style="" class="list card">
     <div class="item item-divider">Identification usinier</div>
     <div class="item item-body">
-        <form name="authorizationForm" novalidate="" ng-submit="signIn(authorizationForm)"  class="list">
+        <form name="authorizationForm" novalidate="" ng-submit="signIn(authorizationForm);submitted = true"  class="list">
             <table style="" class="item item-input">
                 <tr><td>Nom</td></tr>
-                <tr><td> <input placeholder="" type="text" required ng-model="produit.user.firstName"></td></tr>
+                <tr><td> <input placeholder="" type="text" name="firstName" pattern="^[-\w/]+$" required ng-model="produit.user.firstName"></td></tr>
+                 <tr><td><span ng-if="authorizationForm.firstName.$invalid && submitted" class="assertive">ce champ est de type texte</span></td></tr>
             </table>
             <table style="" class="item item-input">
                 <tr><td>Prenom</td></tr>
-                <tr><td> <input placeholder="" type="text" required ng-model="produit.user.lastName"></td></tr>
+                <tr><td> <input placeholder="" name="lastName"type="text" pattern="^[-\w/]+$" required ng-model="produit.user.lastName"></td></tr>
+                <tr><td><span ng-if="authorizationForm.lastName.$invalid && submitted" class="assertive">ce champ est de type texte</span></td></tr>
+
             </table>
+            <table style=""  class="item item-input">
+                        <tr><td>Email</td></tr>
+                        <tr ><td><input placeholder="" name="email" type="text"  required  ng-model="produit.user.email" ></td></tr>
+                   <tr><td><span ng-if="authorizationForm.email.$invalid && submitted" class="assertive">veuillez verifier votre email</span></td></tr>
+
+                    </table>
             <table style="" class="item item-input">
                 <tr><td>Pays</td></tr>
-                <tr><td><input placeholder="" type="text" required ng-model="produit.user.pays"></td></tr>
+                <tr><td><input placeholder="" name="pays" type="text" pattern="^[-\w/]+$" required ng-model="produit.user.pays"></td></tr>
+           <tr><td><span ng-if="authorizationForm.pays.$invalid && submitted" class="assertive">ce champ est de type texte</span></td></tr>
+ 
             </table>
             <table style="" class="item item-input">
                 <tr><td>Ville</td></tr>
-                <tr><td> <input placeholder="" type="text" required ng-model="produit.user.ville"></td></tr>
+                <tr><td> <input placeholder="" name="ville" type="text" pattern="^[-\w/]+$" required ng-model="produit.user.ville"></td></tr>
+           <tr><td><span ng-if="authorizationForm.ville.$invalid && submitted" class="assertive">ce champ est de type texte</span></td></tr>
+
             </table>
             <table style="" class="item item-input">
                 <tr><td>Zone/Village</td></tr>
-                <tr><td> <input placeholder="" type="text" required ng-model="produit.user.zone"></td></tr>
+                <tr><td> <input placeholder="" name="zone" type="text" pattern="^[-\w/]+$" required ng-model="produit.user.zone"></td></tr>
+                <tr><td><span ng-if="authorizationForm.zone.$invalid && submitted" class="assertive">ce champ est de type texte</span></td></tr>
+                  
             </table>
+            <table style=""  class="item item-input">
+                        <tr><td>Longititude</td></tr>
+                        <tr ><td> <input placeholder="" type="text"   name="longi"  required  ng-model="produit.user.longitude"></td></tr>
+                    <tr><td><span ng-if="authorizationForm.longitude.$invalid && submitted" class="assertive">ce champ est de type texte</span></td></tr>
+                    
+                    </table>
+                    <table style=""  class="item item-input">
+                        <tr><td>latitude</td></tr>
+                        <tr ><td> <input placeholder="" type="text"   name="lat"  required  ng-model="produit.user.latitude"></td></tr>
+                    <tr><td><span ng-if="authorizationForm.latitude.$invalid && submitted" class="assertive">ce champ est de type texte</span></td></tr>
+                    
+                    </table>
             <table style="" class="item item-input">
                 <tr><td>Contact</td></tr>
-                <tr><td> <input placeholder="" type="text" required ng-model="produit.user.contact"></td></tr>
+                <tr><td> <input placeholder="" name="contact" type="text" pattern="^[-\w/]+$" required ng-model="produit.user.contact"></td></tr>
+           <tr><td><span ng-if="authorizationForm.contact.$invalid && submitted" class="assertive">ce champ est de type texte</span></td></tr>
+                   
             </table>
             <table style="" class="item item-input">
                 <tr><td>Type Usine</td></tr>
-                <tr><td> <input placeholder="" type="text" required ng-model="produit.user.typeUsine"></td></tr>
+                <tr><td> <input placeholder="" type="text" name="tu" pattern="^[-\w/]+$" required ng-model="produit.user.typeUsine"></td></tr>
+                <tr><td><span ng-if="authorizationForm.tu.$invalid && submitted" class="assertive">ce champ est de type texte</span></td></tr>
+
             </table>
             <table style="" class="item item-input">
                 <tr><td>Capacite</td></tr>
-                <tr><td><input placeholder="" type="number" required ng-model="produit.user.capaciteUsine"></td></tr>
+                <tr><td><input placeholder="" name="cap" type="number" pattern="^[/\d+/]+$" required ng-model="produit.user.capaciteUsine"></td></tr>
+                <tr><td><span ng-if="authorizationForm.cap.$invalid && submitted" class="assertive">ce champ est de type numerique</span></td></tr>
+
             </table>
             <button class="button button-stable button-block " type="submit"> Suivant</button>
             <!--<a style=""  ui-sref="produit.page2" menu-close="">Suivant</a>-->

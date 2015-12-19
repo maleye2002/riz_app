@@ -25,12 +25,16 @@ angular.module('app.services', [])
 
   }])
 
+   
+    
     .service('store', ['$localstorage', function ($localstorage) {
       var storeName = 'riz';
       var storeCnx = 'rizCredential';
       var prevision = 'prevision', stock = 'stock', produit='produit';
+      var user = 'user';
       var credentials = 'credentials';
-
+      
+     
       function cleanStore(prevision) {
         //add to store
         var store = $localstorage.getObject(storeName);
@@ -79,6 +83,9 @@ angular.module('app.services', [])
         },
         addProduit: function (newItem) {
           this.addNewItem(newItem, produit);
+        },
+        adduser: function (newItem) {
+          this.addNewItem(newItem, user);
         },
         addNewItem: function (newItem, sectionName) {
           cleanStore(sectionName);

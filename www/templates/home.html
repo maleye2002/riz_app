@@ -13,12 +13,13 @@
 </ion-nav-buttons>
 
 <ion-content class="has-header" padding="'true'">
-    <h1 style="">REMUGOL</h1>
+    <h1 style="text-align:center">REMUGOL</h1>
     <div style="width: 300px; height: 54px;" class="spacer"></div>
     <div ng-show ="message.msg"   >
-        <button ng-click="message.msg=''" class="{{message.nClass}}">
+        <button ng-click="message.msg=''" class="{{message.nClass}} ">
             {{message.msg}}
         </button>
+       
     </div>
     <form style="" class="list"></form>
     <div class="row"  >
@@ -48,13 +49,13 @@
     </div>
     <div style="width: 300px; height: 30px;" class="spacer"></div>
 
-    <!--<div style="width: 300px; height: 30px;" class="spacer"></div>-->
+    <!--<div style="width: 300px; height: 30px;" class="spacer" ></div>-->
 
 </ion-content>
 
 <div ng-hide="ListStock" class="bar bar-footer">
     <div class="title">
-        <a style="" class="button button-balanced button-block " ng-click="uploadData()"  menu-close=""> <i class="icon ion-upload"></i>Envoyer vos enregistrements</a>
+        <a style="" class="button button-balanced button-block " ng-if="getStore == null" ng-click="uploadData()" ng-hide="" menu-close=""> <i class="icon ion-upload"></i>Envoyer vos enregistrements</a>
     </div>
 </div>
 </ion-view>

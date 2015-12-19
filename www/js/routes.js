@@ -17,7 +17,17 @@ angular.module('app.routes', [])
     })
         
       
-    
+     .state('home.back', {
+     // url: '/back',
+      //templateUrl: 'templates/login.html',
+      controller: function($scope,$ionicHistory) {
+        
+        $scope.myGoBack = function() {
+    $ionicHistory.goBack();
+  }
+      }
+    })
+       
       
         
     .state('signup', {
@@ -54,6 +64,10 @@ angular.module('app.routes', [])
       url: '/step_2',
       templateUrl: 'templates/previsionsSuite.html'
     })
+    .state('previsions.page3', {
+      url: '/step_3',
+      templateUrl: 'templates/previsionsSuite1.html'
+    })
         
       
     
@@ -72,6 +86,10 @@ angular.module('app.routes', [])
       .state('stock.page2', {
         url: '',
         templateUrl: 'templates/stockSuite.html'
+      })
+      .state('stock.page3', {
+        url: '',
+        templateUrl: 'templates/stockSuite1.html'
       })
 
       .state('EditCompte', {

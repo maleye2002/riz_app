@@ -1,42 +1,64 @@
  <div style="" class="list card">
             <div class="item item-divider">Identification du Producteur</div>
             <div class="item item-body">
-                <form name="authorizationForm" novalidate="" ng-submit="signIn(authorizationForm)" class="list">
+                <form name="authorizationForm" novalidate="" ng-submit="signIn(authorizationForm);submitted = true" class="list">
                     <table style=""  class="item item-input" >
                         <tr><td> Nom</td></tr>
-                        <tr ><td><input placeholder="" name="firstName" type="text"  required   ng-model="prevision.user.firstName"></td></tr>
-                    </table>
+                        <tr ><td><input placeholder="" name="firstName" type="text"  required pattern="^[-\w/]+$"  ng-model="prevision.user.firstName"></td></tr>
+                   <tr><td><span ng-if="authorizationForm.firstName.$invalid && submitted" class="assertive">ce champ est de type texte</span></td></tr>
+                     </table>
                     <table style=""  class="item item-input">
                         <tr><td>Prenom</td></tr>
-                        <tr ><td><input placeholder="" name="lastName" type="text"  required  ng-model="prevision.user.lastName" ></td></tr>
+                        <tr ><td><input placeholder="" name="lastName" type="text" pattern="^[-\w/]+$" required  ng-model="prevision.user.lastName" ></td></tr>
+                        <tr><td><span ng-if="authorizationForm.lastName.$invalid && submitted" class="assertive">ce champ est de type texte</span></td></tr>
+                    </table>
+                     <table style=""  class="item item-input">
+                        <tr><td>Email</td></tr>
+                        <tr ><td><input placeholder="" name="email" type="email"  required  ng-model="prevision.user.Email" ></td></tr>
+                    <tr><td><span ng-if="authorizationForm.email.$invalid && submitted" class="assertive">veuillez verifier votre email</span></td></tr>
+                    </table>
+                    <table style=""  class="item item-input">
+                        <tr><td>Zone/Village</td></tr>
+                        <tr ><td> <input placeholder="" type="text"   name="zone" pattern="^[-\w/]+$" required  ng-model="prevision.user.zone"></td></tr>
+                    <tr><td><span ng-if="authorizationForm.zone.$invalid && submitted" class="assertive">ce champ est de type texte</span></td></tr>
+                    
                     </table>
                     <table style=""  class="item item-input">
                         <tr><td>Pays</td></tr>
                         <tr ><td> <input placeholder="" type="text"  name="pays" required  ng-model="prevision.user.pays" ></td></tr>
+                    <tr><td><span ng-if="authorizationForm.pays.$invalid && submitted" class="assertive">ce champ est de type texte</span></td></tr>
                     </table>
                     <table style=""  class="item item-input">
                         <tr><td>Ville</td></tr>
-                        <tr ><td> <input placeholder="" type="text"  name="ville"  required  ng-model="prevision.user.ville" ></td></tr>
+                        <tr ><td> <input placeholder="" type="text"  name="ville" pattern="^[-\w/]+$" required  ng-model="prevision.user.ville" ></td></tr>
+                    <tr><td><span ng-if="authorizationForm.ville.$invalid && submitted" class="assertive">ce champ est de type texte</span></td></tr>
                     </table>
                     <table style=""  class="item item-input">
-                        <tr><td>Zone/Village</td></tr>
-                        <tr ><td> <input placeholder="" type="text"   name="zone" required  ng-model="prevision.user.zone"></td></tr>
+                        <tr><td>Longititude</td></tr>
+                        <tr ><td> <input placeholder="" type="text"   name="longi"  required  ng-model="prevision.user.longitude"></td></tr>
+                    <tr><td><span ng-if="authorizationForm.longitude.$invalid && submitted" class="assertive">ce champ est de type texte</span></td></tr>
+                    
                     </table>
+                    <table style=""  class="item item-input">
+                        <tr><td>latitude</td></tr>
+                        <tr ><td> <input placeholder="" type="text"   name="lat"  required  ng-model="prevision.user.latitude"></td></tr>
+                    <tr><td><span ng-if="authorizationForm.latitude.$invalid && submitted" class="assertive">ce champ est de type texte</span></td></tr>
+                    
+                    </table>
+                    
                     <table style=""  class="item item-input">
                         <tr><td>Contact</td></tr>
-                        <tr ><td> <input placeholder="" type="text"  name="contact" required  ng-model="prevision.user.contact"></td></tr>
+                        <tr ><td> <input placeholder="" type="text"  name="contact" pattern="^[-\w/]+$" required  ng-model="prevision.user.contact"></td></tr>
+                    <tr><td><span ng-if="authorizationForm.contact.$invalid && submitted" class="assertive">ce champ est de type texte</span></td></tr>
                     </table>
-                    <!--<table style=""  class="item item-input">
-                        <tr><td>Structure</td></tr>
-                        <tr ><td> <input placeholder="" type="text"  required   name="structure" ng-model="prevision.user.structure"></td></tr>
-                    </table>-->
+                    
                     <table style="" class="item item-select">
                         <tr ><td>Type de Structure</td></tr>
                         <tr><td> <select  ng-model="prevision.user.structure" >
                             <option value="R1">Coopérative</option>
                             <option value="R2">Union</option>
-                            <option value="R2">GIE</option>
-                            <option value="R2">Entreprise privée</option>
+                            <option value="R3">GIE</option>
+                            <option value="R4">Entreprise privée</option>
                         </select></td></tr>
                     </table>
 

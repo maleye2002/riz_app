@@ -7,7 +7,7 @@
 // 'starter.controllers' is found in controllers.js
 angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.services', 'app.directives'])
 
-.run(function($ionicPlatform) {
+.run(function($ionicPlatform, $rootScope, $state) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -19,6 +19,14 @@ angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.services',
       StatusBar.styleDefault();
     }
   });
+  
+  $rootScope
+    .$on('$stateChangeSuccess',
+        function (event, home, toParams, signup, fromParams) {
+            //show alert()
+            
+            //$state.go('login');
+        });
 });
   //  .config(['$httpProvider', function($httpProvider) {
   //  $httpProvider.defaults.useXDomain = true;
