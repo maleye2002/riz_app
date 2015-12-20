@@ -36,6 +36,11 @@ angular.module('app.routes', [])
       controller: 'signupCtrl'
     })
 
+// .state('signup', {
+//       url: '/page9',
+//       templateUrl: 'templates/signup.html',
+//       controller: 'signupCtrl'
+//     })
 
     
       
@@ -151,8 +156,11 @@ angular.module('app.routes', [])
         
       
     ;
-
-  // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/Home');
+   
+     $urlRouterProvider.otherwise('/Home');
+  
+ 
+  
+ 
 
 });

@@ -10,6 +10,9 @@
     <button class="button button-assertive  icon ion-trash-a" ng-click="viderStore()">
         Vider archives
     </button>
+    <button class="button button-assertive  icon ion-trash-a" ng-click="viderCre()">
+        Vider credentialTEst
+    </button>
 </ion-nav-buttons>
 
 <ion-content class="has-header" padding="'true'">
@@ -55,7 +58,7 @@
 
 <div ng-hide="ListStock" class="bar bar-footer">
     <div class="title">
-        <a style="" class="button button-balanced button-block " ng-if="getStore == null" ng-click="uploadData()" ng-hide="" menu-close=""> <i class="icon ion-upload"></i>Envoyer vos enregistrements</a>
+        <a style="" class="button button-balanced button-block " ng-if="getStore() == null" ng-click="uploadData()" ng-hide="" menu-close=""> <i class="icon ion-upload"></i>Envoyer vos enregistrements</a>
     </div>
 </div>
 </ion-view>

@@ -7,7 +7,7 @@
 // 'starter.controllers' is found in controllers.js
 angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.services', 'app.directives'])
 
-.run(function($ionicPlatform, $rootScope, $state) {
+.run(function($ionicPlatform,$rootScope,$state,store) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -18,19 +18,24 @@ angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.services',
       // org.apache.cordova.statusbar required
       StatusBar.styleDefault();
     }
-  });
-  
-  $rootScope
-    .$on('$stateChangeSuccess',
-        function (event, home, toParams, signup, fromParams) {
-            //show alert()
-            
-            //$state.go('login');
-        });
+  }); 
+  // $rootScope
+  //           .$on('$stateChangeSuccess',
+  //               function (event,toState){
+                 
+  //                 if( toState.name != 'login'  &&  !store.getCredential().NewUserName ){ 
+  //                 $state.go('login');
+                      
+  //                 }
+                  
+                  
+  //               });
 });
+  
+  
+
   //  .config(['$httpProvider', function($httpProvider) {
   //  $httpProvider.defaults.useXDomain = true;
-  //  $httpProvider.defaults.headers.common = 'Content-Type: application/json';
-  //  delete $httpProvider.defaults.headers.common['X-Requested-With'];
+  //  $httpProvider/  delete $httpProvider.defaults.headers.common['X-Requested-With'];
   //}
   //]);

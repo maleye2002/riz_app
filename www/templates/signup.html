@@ -1,21 +1,124 @@
-<ion-view style="" title="Signup">
-    <ion-content class="has-header" scroll="false" padding="'true'">
-        <form style="" class="list">
-            <ion-list style="">
-                <label style="" class="item item-input">
-                    <span class="input-label">Mail</span>
-                    <input placeholder="" type="email" ng-model="user.Mail">
-                </label>
-                <label style="" class="item item-input">
-                    <span class="input-label">Username</span>
-                    <input placeholder="" type="text"  ng-model="user.NewUserName">
-                </label>
-                <label style="" class="item item-input">
-                    <span class="input-label">Password</span>
-                    <input placeholder="" type="password"  ng-model="user.NewPwd">
-                </label>
-            </ion-list>
-            <button style="" class="button button-stable button-block" ng-click="signUp()">Sign up</button>
-        </form>
-    </ion-content>
-</ion-view>
+ <div style="" class="list card">
+            <div class="item item-divider">INSCRIPTION</div>
+            <div class="item item-body">
+                <form name="authorizationForm" novalidate="" ng-submit=" addPrevision(authorizationForm);submitted = true" class="list">
+                    
+                    <table style=""  class="item item-input" >
+                        <tr><td> Nom</td></tr>
+                        <tr ><td><input placeholder="" name="firstName" type="text"  required pattern="^[-\w/]+$"  ng-model="prevision.user.firstName"></td></tr>
+                   <tr><td><span ng-if="authorizationForm.firstName.$invalid && submitted" class="assertive">ce champ est de type texte</span></td></tr>
+                     </table>
+                    <table style=""  class="item item-input">
+                        <tr><td>Prenom</td></tr>
+                        <tr ><td><input placeholder="" name="lastName" type="text" pattern="^[-\w/]+$" required  ng-model="prevision.user.lastName" ></td></tr>
+                        <tr><td><span ng-if="authorizationForm.lastName.$invalid && submitted" class="assertive">ce champ est de type texte</span></td></tr>
+                    </table>
+                     <table style=""  class="item item-input">
+                        <tr><td>Email</td></tr>
+                        <tr ><td><input placeholder="" name="email" type="email"  required  ng-model="prevision.user.Email" ></td></tr>
+                    <tr><td><span ng-if="authorizationForm.email.$invalid && submitted" class="assertive">veuillez verifier votre email</span></td></tr>
+                    </table><tr><td>Pseudo</td></tr>
+                        <tr ><td><input placeholder="" name="pseudo" type="text"  required pattern="^[-\w/]+$"  ng-model="prevision.user.pseudo"></td></tr>
+                   <tr><td><span ng-if="authorizationForm.pseudo.$invalid && submitted" class="assertive">ce champ est de type texte</span></td></tr>
+                     </table>
+                    <table style=""  class="item item-input">
+                        <tr><td>Mot de passe</td></tr>
+                        <tr ><td><input placeholder="" name="pwd" type="password" pattern="^[-\w/]+$" required  ng-model="prevision.user.mdp" ></td></tr>
+                        <tr><td><span ng-if="authorizationForm.pwd.$invalid && submitted" class="assertive">ce champ est de type texte</span></td></tr>
+                    </table>
+                    <table style=""  class="item item-input">
+                        <tr><td>Zone/Village</td></tr>
+                        <tr ><td> <input placeholder="" type="text"   name="zone" pattern="^[-\w/]+$" required  ng-model="prevision.user.zone"></td></tr>
+                    <tr><td><span ng-if="authorizationForm.zone.$invalid && submitted" class="assertive">ce champ est de type texte</span></td></tr>
+                    
+                    </table>
+                    <table style=""  class="item item-input">
+                        <tr><td>Pays</td></tr>
+                        <tr ><td> <input placeholder="" type="text"  name="pays" required  ng-model="prevision.user.pays" ></td></tr>
+                    <tr><td><span ng-if="authorizationForm.pays.$invalid && submitted" class="assertive">ce champ est de type texte</span></td></tr>
+                    </table>
+                    <table style=""  class="item item-input">
+                        <tr><td>Ville</td></tr>
+                        <tr ><td> <input placeholder="" type="text"  name="ville" pattern="^[-\w/]+$" required  ng-model="prevision.user.ville" ></td></tr>
+                    <tr><td><span ng-if="authorizationForm.ville.$invalid && submitted" class="assertive">ce champ est de type texte</span></td></tr>
+                    </table>
+                    <table style=""  class="item item-input">
+                        <tr><td>Longititude</td></tr>
+                        <tr ><td> <input placeholder="" type="text"   name="longi"  required  ng-model="prevision.user.longitude"></td></tr>
+                    <tr><td><span ng-if="authorizationForm.longitude.$invalid && submitted" class="assertive">ce champ est de type texte</span></td></tr>
+                    
+                    </table>
+                    <table style=""  class="item item-input">
+                        <tr><td>latitude</td></tr>
+                        <tr ><td> <input placeholder="" type="text"   name="lat"  required  ng-model="prevision.user.latitude"></td></tr>
+                    <tr><td><span ng-if="authorizationForm.latitude.$invalid && submitted" class="assertive">ce champ est de type texte</span></td></tr>
+                    
+                    </table>
+                    
+                    <table style=""  class="item item-input">
+                        <tr><td>Contact</td></tr>
+                        <tr ><td> <input placeholder="" type="text"  name="contact" pattern="^[-\w/]+$" required  ng-model="prevision.user.contact"></td></tr>
+                    <tr><td><span ng-if="authorizationForm.contact.$invalid && submitted" class="assertive">ce champ est de type texte</span></td></tr>
+                    </table>
+                    
+                  
+                     <table style="" class="item item-select">
+                        <tr ><td>Type Utilisateur</td></tr>
+                        <tr><td> <select  ng-model="prevision.user.type" >
+                            <option value="t1">producteur</option>
+                            <option value="t2">usinier</option>
+                        </select></td></tr>
+                    </table>
+                     <div ng-if="prevision.user.type == 't1'">
+                          <table style="" class="item item-select">
+                        <tr ><td>Type de Structure</td></tr>
+                        <tr><td> <select  ng-model="prevision.user.structure" >
+                            <option value="R1">Coopérative</option>
+                            <option value="R2">Union</option>
+                            <option value="R3">GIE</option>
+                            <option value="R4">Entreprise privée</option>
+                        </select></td></tr>
+                    </table>
+                    </div>
+                    <div  ng-if="prevision.user.type == 't2'">
+                        <table style=""  class="item item-input">
+                        <tr><td>typeUsine</td></tr>
+                        <tr ><td> <input placeholder="" type="text"  name="contact" pattern="^[-\w/]+$" required  ng-model="prevision.user.typeUsine"></td></tr>
+                    <tr><td><span ng-if="authorizationForm.contact.$invalid && submitted" class="assertive">ce champ est de type texte</span></td></tr>
+                    </table>
+                    
+                    <table style=""  class="item item-input">
+                        <tr><td>Capacite</td></tr>
+                        <tr ><td> <input placeholder="" type="text"  name="contact" pattern="^[-\w/]+$" required  ng-model="prevision.user.capacite"></td></tr>
+                    <tr><td><span ng-if="authorizationForm.contact.$invalid && submitted" class="assertive">ce champ est de type texte</span></td></tr>
+                    </table>
+                    </div>
+                   
+                    
+    <button type="submit" class="button button-stable button-block ">Sign up</button>
+                    <!--<a style="" class="button button-stable button-block " ui-sref="previsions.page2" menu-close="">Suivant</a>-->
+                </form>
+            </div>
+        </div>
+
+<!--<ion-view style="" title="Signup">-->
+<!--    <ion-content class="has-header" scroll="false" padding="'true'">-->
+<!--        <form style="" class="list">-->
+<!--            <ion-list style="">-->
+<!--                <label style="" class="item item-input">-->
+<!--                    <span class="input-label">Mail</span>-->
+<!--                    <input placeholder="" type="email" ng-model="user.Mail">-->
+<!--                </label>-->
+<!--                <label style="" class="item item-input">-->
+<!--                    <span class="input-label">Username</span>-->
+<!--                    <input placeholder="" type="text"  ng-model="user.NewUserName">-->
+<!--                </label>-->
+<!--                <label style="" class="item item-input">-->
+<!--                    <span class="input-label">Password</span>-->
+<!--                    <input placeholder="" type="password"  ng-model="user.NewPwd">-->
+<!--                </label>-->
+<!--            </ion-list>-->
+<!--            <button style="" class="button button-stable button-block" ng-click="signUp()">Sign up</button>-->
+<!--        </form>-->
+<!--    </ion-content>-->
+<!--</ion-view>-->

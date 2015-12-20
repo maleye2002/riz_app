@@ -1,14 +1,19 @@
     angular.module('app.controllers', [])
     //, $timeou
-        .controller('loginCtrl', function($scope, store, $state,$http, $ionicPopup) {
+        .controller('loginCtrl', function($scope,store, $state,$http, $ionicPopup) {
             $scope.user={};
-            $scope.userexist = store.getStore();
+            // $scope.userexist = store.getStore();
+           
+            
             $scope.connexion = function (form) {
+                
+              
                 
                 if(form.$valid)
                 {
+                    
                    var test = store.getCredential();
-                   if(test && ($scope.user.userName == test.UserName) &&  ($scope.user.pwd == test.NewPwd)) {
+                   if(test && ($scope.user.userName == test.pseudo) &&  ($scope.user.pwd == test.motdepasse)) {
                     $ionicPopup.alert({
                         title: 'Cyber-Riz',
                         template: 'connexion  etablie',
@@ -40,7 +45,12 @@
                                     }]
                             }) ;
                             
-                               store.adduser($scope.user);  
+                            //store.adduser($scope.user); 
+                           
+                              store.setCredential(resp.data.form_login.userData);
+                              console.log('ma valeur');
+                              console.log(store.getCredential());
+                             
                             
                            $state.go('home');
                             //$scope.counter= $scope.counter + 1;
@@ -77,6 +87,7 @@
     
                         }]
                     });
+                  
                 }
     
     
@@ -120,11 +131,22 @@
     
         })
     
-        .controller('homeCtrl', function($scope,$http, store, $ionicPopup, $timeout, $state ) {
+        .controller('homeCtrl', function($scope,$http, store, $ionicPopup, $timeout, $state,$rootScope ) {
+          
+           $scope.viderCre= function ()
+            {
+    console.log(store.getCredential());
+                    store.setCredential({});
+                    console.log(store.getCredential());
+                    $state.go('login');
+                   
+            };
+         
+          
             $scope.message = null;
-            //http://localhost:63342/riz_app/www/api.json
             var data = store.getStore();
-            console.log(JSON.stringify(data));
+            console.log(store.getCredential());
+            // console.log(JSON.stringify(data));
             $scope.message = {};
             $scope.viderStore = viderStore;
             $scope.uploadData = function (){
